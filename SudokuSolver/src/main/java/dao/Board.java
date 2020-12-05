@@ -20,15 +20,15 @@ public class Board {
         return board;
     }
 
-//    public void insert(Coordinates position, int value) {
-//        board[position.x][position.y] = value;
-//    }
-//
-//    public void swapNumbersByCoordinates(Coordinates c1, Coordinates c2) {
-//        int tmp = board[c1.x][c1.y];
-//        board[c1.x][c1.y] = board[c2.x][c2.y];
-//        board[c2.x][c2.y] = tmp;
-//    }
+    public void insert(Position position, int value) {
+        board[position.x][position.y] = value;
+    }
+
+    public void swapNumbersByPosition(Position p1, Position p2) {
+        int tmp = board[p1.x][p1.y];
+        board[p1.x][p1.y] = board[p2.x][p2.y];
+        board[p2.x][p2.y] = tmp;
+    }
 
     public BoarderCellsList getRow(int number) {
         List<Integer> numbers = new ArrayList<>();
