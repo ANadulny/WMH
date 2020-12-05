@@ -4,10 +4,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Column {
+public class BoarderCellsList {
     List<Integer> numbers;
 
-    public Column(List<Integer> numbers) {
+    public BoarderCellsList(List<Integer> numbers) {
         this.numbers = numbers;
     }
 
@@ -22,7 +22,7 @@ public class Column {
 
     @Override
     public String toString() {
-        return "Column{" +
+        return "BoarderCellsList{" +
                 "numbers=" + numbers +
                 '}';
     }

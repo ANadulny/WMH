@@ -1,6 +1,5 @@
 import dao.Board;
-import dao.Column;
-import dao.Row;
+import dao.BoarderCellsList;
 import org.testng.annotations.Test;
 
 import java.io.BufferedReader;
@@ -75,8 +74,8 @@ public class SudokuReaderTest {
             for (int i = 1; i <= 10; i++) {
                 Board solutionBoard = readSudokuFromFile(level, "solutions", i + ".txt");
                 for (int j = 0; j < 9; j++) {
-                    Row row = solutionBoard.getRow(j);
-                    Column column = solutionBoard.getColumn(j);
+                    BoarderCellsList row = solutionBoard.getRow(j);
+                    BoarderCellsList column = solutionBoard.getColumn(j);
                     if (!row.hasDiffNumbers() || !column.hasDiffNumbers()) {
                         fail("Sudoku solution on level " + level + " from file " + i + ".txt has failed. Numbers in all rows and columns must be different.");
                     }
@@ -93,13 +92,8 @@ public class SudokuReaderTest {
                 Board testBoard = readSudokuFromFile(level, "tests", i + ".txt");
                 Board solutionBoard = readSudokuFromFile(level, "solutions", i + ".txt");
                 for (int j = 0; j < 9; j++) {
-                    Row testBoardRow = testBoard.getRow(j);
-                    Column testBoardColumn = testBoard.getColumn(j);
-                    Row solutionBoardRow = solutionBoard.getRow(j);
-                    Column solutionBoardColumn = solutionBoard.getColumn(j);
-
-                    if (!hasCorrectNumberPosition(testBoardRow.getNumbers(), solutionBoardRow.getNumbers()) ||
-                            !hasCorrectNumberPosition(testBoardColumn.getNumbers(), solutionBoardColumn.getNumbers())) {
+                    if (!hasCorrectNumberPosition(testBoard.getRow(j), solutionBoard.getRow(j)) ||
+                            !hasCorrectNumberPosition(testBoard.getColumn(j), solutionBoard.getColumn(j))) {
                         fail("Sudoku on level " + level + " from file " + i + ".txt has different positions numbers in testing data and in solution.");
                     }
                 }
@@ -107,7 +101,9 @@ public class SudokuReaderTest {
         }
     }
 
-    private boolean hasCorrectNumberPosition(List<Integer> test, List<Integer> solution) {
+    private boolean hasCorrectNumberPosition(BoarderCellsList testList, BoarderCellsList solutionList) {
+        List<Integer> test = testList.getNumbers();
+        List<Integer> solution = solutionList.getNumbers();
         if (test.size() != solution.size()) {
             return false;
         }

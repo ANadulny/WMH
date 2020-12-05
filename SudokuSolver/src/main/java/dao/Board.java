@@ -30,20 +30,20 @@ public class Board {
 //        board[c2.x][c2.y] = tmp;
 //    }
 
-    public Row getRow(int number) {
+    public BoarderCellsList getRow(int number) {
         List<Integer> numbers = new ArrayList<>();
         for (int i = 0; i < 9; i++) {
             numbers.add(board[number][i]);
         }
-        return new Row(numbers);
+        return new BoarderCellsList(numbers);
     }
 
-    public Column getColumn(int number) {
+    public BoarderCellsList getColumn(int number) {
         List<Integer> numbers = new ArrayList<>();
         for (int i = 0; i < 9; i++) {
             numbers.add(board[i][number]);
         }
-        return new Column(numbers);
+        return new BoarderCellsList(numbers);
     }
 
     @Override
