@@ -1,4 +1,6 @@
 import dao.Board;
+import dao.Column;
+import dao.Row;
 import org.testng.annotations.Test;
 
 import java.io.BufferedReader;
@@ -68,32 +70,119 @@ public class SudokuReaderTest {
 
     @Test(dependsOnMethods = { "testSudokuTestingDataFileExists" })
     public void testSudokuEasySolutionLevelReader() {
-
-        fail("Sudoku incorrect. Numbers in all rows and columns must be different.");
+        String level = "easy";
+        for (int i = 1; i <= 10; i++) {
+            Board solutionBoard = readSudokuFromFile(level, "solutions", i + ".txt");
+            for (int j = 0; j < 9; j++) {
+                Row row = solutionBoard.getRow(j);
+                Column column = solutionBoard.getColumn(j);
+                if (!row.hasDiffNumbers() || !column.hasDiffNumbers()) {
+                    fail("Easy sudoku solution level " + i + ".txt has failed. Numbers in all rows and columns must be different.");
+                }
+            }
+        }
     }
 
     @Test(dependsOnMethods = { "testSudokuTestingDataFileExists" })
     public void testSudokuMiddleSolutionLevelReader() {
-        fail("Sudoku incorrect. Numbers in all rows and columns must be different.");
+        String level = "middle";
+        for (int i = 1; i <= 10; i++) {
+            Board solutionBoard = readSudokuFromFile(level, "solutions", i + ".txt");
+            for (int j = 0; j < 9; j++) {
+                Row row = solutionBoard.getRow(j);
+                Column column = solutionBoard.getColumn(j);
+                if (!row.hasDiffNumbers() || !column.hasDiffNumbers()) {
+                    fail("Middle sudoku solution level " + i + ".txt has failed. Numbers in all rows and columns must be different.");
+                }
+            }
+        }
     }
 
     @Test(dependsOnMethods = { "testSudokuTestingDataFileExists" })
     public void testSudokuHardSolutionLevelReader() {
-        fail("Sudoku incorrect. Numbers in all rows and columns must be different.");
+        String level = "hard";
+        for (int i = 1; i <= 10; i++) {
+            Board solutionBoard = readSudokuFromFile(level, "solutions", i + ".txt");
+            for (int j = 0; j < 9; j++) {
+                Row row = solutionBoard.getRow(j);
+                Column column = solutionBoard.getColumn(j);
+                if (!row.hasDiffNumbers() || !column.hasDiffNumbers()) {
+                    fail("Hard sudoku solution level " + i + ".txt has failed. Numbers in all rows and columns must be different.");
+                }
+            }
+        }
     }
 
     @Test(dependsOnMethods = { "testSudokuTestingDataFileExists" })
     public void testCompareTestsAndSolutionDataForSudokuEasyLevel() {
-        fail("Sudoku incorrect. Numbers in all rows and columns must be different.");
+        String level = "easy";
+        for (int i = 1; i <= 10; i++) {
+            Board testBoard = readSudokuFromFile(level, "tests", i + ".txt");
+            Board solutionBoard = readSudokuFromFile(level, "solutions", i + ".txt");
+            for (int j = 0; j < 9; j++) {
+                Row testBoardRow = testBoard.getRow(j);
+                Column testBoardColumn = testBoard.getColumn(j);
+                Row solutionBoardRow = solutionBoard.getRow(j);
+                Column solutionBoardColumn = solutionBoard.getColumn(j);
+
+                if (!hasCorrectNumberPosition(testBoardRow.getNumbers(), solutionBoardRow.getNumbers()) ||
+                        !hasCorrectNumberPosition(testBoardColumn.getNumbers(), solutionBoardColumn.getNumbers())) {
+                    fail("Easy sudoku " + i + ".txt has different positions numbers in testing data and in solution.");
+                }
+            }
+        }
+    }
+
+    private boolean hasCorrectNumberPosition(List<Integer> test, List<Integer> solution) {
+        if (test.size() != solution.size()) {
+            return false;
+        }
+
+        for(int i = 0; i < test.size(); i++) {
+            if (!test.get(i).equals(0) && !test.get(i).equals(solution.get(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Test(dependsOnMethods = { "testSudokuTestingDataFileExists" })
     public void testCompareTestsAndSolutionDataForSudokuMiddleLevel() {
-        fail("Sudoku incorrect. Numbers in all rows and columns must be different.");
+        String level = "middle";
+        for (int i = 1; i <= 10; i++) {
+            Board testBoard = readSudokuFromFile(level, "tests", i + ".txt");
+            Board solutionBoard = readSudokuFromFile(level, "solutions", i + ".txt");
+            for (int j = 0; j < 9; j++) {
+                Row testBoardRow = testBoard.getRow(j);
+                Column testBoardColumn = testBoard.getColumn(j);
+                Row solutionBoardRow = solutionBoard.getRow(j);
+                Column solutionBoardColumn = solutionBoard.getColumn(j);
+
+                if (!hasCorrectNumberPosition(testBoardRow.getNumbers(), solutionBoardRow.getNumbers()) ||
+                        !hasCorrectNumberPosition(testBoardColumn.getNumbers(), solutionBoardColumn.getNumbers())) {
+                    fail("Middle sudoku " + i + ".txt has different positions numbers in testing data and in solution.");
+                }
+            }
+        }
     }
 
     @Test(dependsOnMethods = { "testSudokuTestingDataFileExists" })
     public void testCompareTestsAndSolutionDataForSudokuHardLevel() {
-        fail("Sudoku incorrect. Numbers in all rows and columns must be different.");
+        String level = "hard";
+        for (int i = 1; i <= 10; i++) {
+            Board testBoard = readSudokuFromFile(level, "tests", i + ".txt");
+            Board solutionBoard = readSudokuFromFile(level, "solutions", i + ".txt");
+            for (int j = 0; j < 9; j++) {
+                Row testBoardRow = testBoard.getRow(j);
+                Column testBoardColumn = testBoard.getColumn(j);
+                Row solutionBoardRow = solutionBoard.getRow(j);
+                Column solutionBoardColumn = solutionBoard.getColumn(j);
+
+                if (!hasCorrectNumberPosition(testBoardRow.getNumbers(), solutionBoardRow.getNumbers()) ||
+                        !hasCorrectNumberPosition(testBoardColumn.getNumbers(), solutionBoardColumn.getNumbers())) {
+                    fail("Hard sudoku " + i + ".txt has different positions numbers in testing data and in solution.");
+                }
+            }
+        }
     }
 }
