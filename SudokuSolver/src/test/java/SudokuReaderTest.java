@@ -69,45 +69,17 @@ public class SudokuReaderTest {
     }
 
     @Test(dependsOnMethods = { "testSudokuTestingDataFileExists" })
-    public void testSudokuEasySolutionLevelReader() {
-        String level = "easy";
-        for (int i = 1; i <= 10; i++) {
-            Board solutionBoard = readSudokuFromFile(level, "solutions", i + ".txt");
-            for (int j = 0; j < 9; j++) {
-                Row row = solutionBoard.getRow(j);
-                Column column = solutionBoard.getColumn(j);
-                if (!row.hasDiffNumbers() || !column.hasDiffNumbers()) {
-                    fail("Easy sudoku solution level " + i + ".txt has failed. Numbers in all rows and columns must be different.");
-                }
-            }
-        }
-    }
-
-    @Test(dependsOnMethods = { "testSudokuTestingDataFileExists" })
-    public void testSudokuMiddleSolutionLevelReader() {
-        String level = "middle";
-        for (int i = 1; i <= 10; i++) {
-            Board solutionBoard = readSudokuFromFile(level, "solutions", i + ".txt");
-            for (int j = 0; j < 9; j++) {
-                Row row = solutionBoard.getRow(j);
-                Column column = solutionBoard.getColumn(j);
-                if (!row.hasDiffNumbers() || !column.hasDiffNumbers()) {
-                    fail("Middle sudoku solution level " + i + ".txt has failed. Numbers in all rows and columns must be different.");
-                }
-            }
-        }
-    }
-
-    @Test(dependsOnMethods = { "testSudokuTestingDataFileExists" })
-    public void testSudokuHardSolutionLevelReader() {
-        String level = "hard";
-        for (int i = 1; i <= 10; i++) {
-            Board solutionBoard = readSudokuFromFile(level, "solutions", i + ".txt");
-            for (int j = 0; j < 9; j++) {
-                Row row = solutionBoard.getRow(j);
-                Column column = solutionBoard.getColumn(j);
-                if (!row.hasDiffNumbers() || !column.hasDiffNumbers()) {
-                    fail("Hard sudoku solution level " + i + ".txt has failed. Numbers in all rows and columns must be different.");
+    public void testSudokuSolutionLevelReader() {
+        List<String> levels = Arrays.asList("easy", "middle", "hard");
+        for (String level: levels) {
+            for (int i = 1; i <= 10; i++) {
+                Board solutionBoard = readSudokuFromFile(level, "solutions", i + ".txt");
+                for (int j = 0; j < 9; j++) {
+                    Row row = solutionBoard.getRow(j);
+                    Column column = solutionBoard.getColumn(j);
+                    if (!row.hasDiffNumbers() || !column.hasDiffNumbers()) {
+                        fail("Sudoku solution on level " + level + " from file " + i + ".txt has failed. Numbers in all rows and columns must be different.");
+                    }
                 }
             }
         }
@@ -115,19 +87,21 @@ public class SudokuReaderTest {
 
     @Test(dependsOnMethods = { "testSudokuTestingDataFileExists" })
     public void testCompareTestsAndSolutionDataForSudokuEasyLevel() {
-        String level = "easy";
-        for (int i = 1; i <= 10; i++) {
-            Board testBoard = readSudokuFromFile(level, "tests", i + ".txt");
-            Board solutionBoard = readSudokuFromFile(level, "solutions", i + ".txt");
-            for (int j = 0; j < 9; j++) {
-                Row testBoardRow = testBoard.getRow(j);
-                Column testBoardColumn = testBoard.getColumn(j);
-                Row solutionBoardRow = solutionBoard.getRow(j);
-                Column solutionBoardColumn = solutionBoard.getColumn(j);
+        List<String> levels = Arrays.asList("easy", "middle", "hard");
+        for (String level: levels) {
+            for (int i = 1; i <= 10; i++) {
+                Board testBoard = readSudokuFromFile(level, "tests", i + ".txt");
+                Board solutionBoard = readSudokuFromFile(level, "solutions", i + ".txt");
+                for (int j = 0; j < 9; j++) {
+                    Row testBoardRow = testBoard.getRow(j);
+                    Column testBoardColumn = testBoard.getColumn(j);
+                    Row solutionBoardRow = solutionBoard.getRow(j);
+                    Column solutionBoardColumn = solutionBoard.getColumn(j);
 
-                if (!hasCorrectNumberPosition(testBoardRow.getNumbers(), solutionBoardRow.getNumbers()) ||
-                        !hasCorrectNumberPosition(testBoardColumn.getNumbers(), solutionBoardColumn.getNumbers())) {
-                    fail("Easy sudoku " + i + ".txt has different positions numbers in testing data and in solution.");
+                    if (!hasCorrectNumberPosition(testBoardRow.getNumbers(), solutionBoardRow.getNumbers()) ||
+                            !hasCorrectNumberPosition(testBoardColumn.getNumbers(), solutionBoardColumn.getNumbers())) {
+                        fail("Sudoku on level " + level + " from file " + i + ".txt has different positions numbers in testing data and in solution.");
+                    }
                 }
             }
         }
@@ -144,45 +118,5 @@ public class SudokuReaderTest {
             }
         }
         return true;
-    }
-
-    @Test(dependsOnMethods = { "testSudokuTestingDataFileExists" })
-    public void testCompareTestsAndSolutionDataForSudokuMiddleLevel() {
-        String level = "middle";
-        for (int i = 1; i <= 10; i++) {
-            Board testBoard = readSudokuFromFile(level, "tests", i + ".txt");
-            Board solutionBoard = readSudokuFromFile(level, "solutions", i + ".txt");
-            for (int j = 0; j < 9; j++) {
-                Row testBoardRow = testBoard.getRow(j);
-                Column testBoardColumn = testBoard.getColumn(j);
-                Row solutionBoardRow = solutionBoard.getRow(j);
-                Column solutionBoardColumn = solutionBoard.getColumn(j);
-
-                if (!hasCorrectNumberPosition(testBoardRow.getNumbers(), solutionBoardRow.getNumbers()) ||
-                        !hasCorrectNumberPosition(testBoardColumn.getNumbers(), solutionBoardColumn.getNumbers())) {
-                    fail("Middle sudoku " + i + ".txt has different positions numbers in testing data and in solution.");
-                }
-            }
-        }
-    }
-
-    @Test(dependsOnMethods = { "testSudokuTestingDataFileExists" })
-    public void testCompareTestsAndSolutionDataForSudokuHardLevel() {
-        String level = "hard";
-        for (int i = 1; i <= 10; i++) {
-            Board testBoard = readSudokuFromFile(level, "tests", i + ".txt");
-            Board solutionBoard = readSudokuFromFile(level, "solutions", i + ".txt");
-            for (int j = 0; j < 9; j++) {
-                Row testBoardRow = testBoard.getRow(j);
-                Column testBoardColumn = testBoard.getColumn(j);
-                Row solutionBoardRow = solutionBoard.getRow(j);
-                Column solutionBoardColumn = solutionBoard.getColumn(j);
-
-                if (!hasCorrectNumberPosition(testBoardRow.getNumbers(), solutionBoardRow.getNumbers()) ||
-                        !hasCorrectNumberPosition(testBoardColumn.getNumbers(), solutionBoardColumn.getNumbers())) {
-                    fail("Hard sudoku " + i + ".txt has different positions numbers in testing data and in solution.");
-                }
-            }
-        }
     }
 }
