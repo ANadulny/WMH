@@ -1,6 +1,5 @@
 package dao;
 
-// TODO use it in project ?
 public class Cell {
     private int value;
     private boolean filled;
@@ -18,11 +17,11 @@ public class Cell {
         return filled;
     }
 
-    public int get() {
+    public int getValue() {
         return value;
     }
 
-    public void set(final int number){
+    public void setValue(final int number){
         filled = true;
         value = number;
     }
@@ -30,5 +29,10 @@ public class Cell {
     public void clear() {
         value = 0;
         filled = false;
+    }
+
+    @Override
+    public String toString() {
+        return value + "";
     }
 }

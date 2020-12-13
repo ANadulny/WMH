@@ -1,6 +1,7 @@
 package sudoku.reader;
 
 import dao.Board;
+import dao.Cell;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -16,7 +17,7 @@ public class SudokuReader {
 
     public Board readSudokuFromFile(String level, String type, String fileName) {
         String filePath = PROJECT_PATH + level + SEPARATOR + type + SEPARATOR + fileName;
-        int[][] matrix = new int[9][9];
+        Cell[][] matrix = new Cell[9][9];
         try(BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line = br.readLine();
             int iteration = 0;
@@ -26,7 +27,7 @@ public class SudokuReader {
                         .map(row -> isNumeric(row) ? Integer.parseInt(row) : 0)
                         .collect(Collectors.toList());
                 for (int i = 0; i < 9; i++) {
-                    matrix[iteration][i] = numbers.get(i);
+                    matrix[iteration][i] = new Cell(numbers.get(i));
                 }
                 line = br.readLine();
                 iteration++;
@@ -34,7 +35,7 @@ public class SudokuReader {
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Error occur for file " + filePath);
-            return new Board(new int[0][0]);
+            return new Board(new Cell[0][0]);
         }
         return new Board(matrix);
     }
