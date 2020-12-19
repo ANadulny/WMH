@@ -1,6 +1,5 @@
 package dao;
 
-// TODO use it in project ?
 public class Cell {
     private int value;
     private boolean isOriginal;
@@ -19,27 +18,20 @@ public class Cell {
     }
 
 
-    public int get() {
-        return value;
+    public int getValue() {
+        return this.value;
     }
 
-    public void set(final int number){
-        value = number;
+    public void setValue(final int value){
+        this.value = value;
     }
 
-    public boolean isOriginal(){
+    public boolean isOriginal() {
         return this.isOriginal;
-    }
-
-    public void clear() {
-        value = 0;
     }
 
     @Override
     public String toString() {
-        return "Cell{" +
-                "value=" + value +
-                ", isOriginal=" + isOriginal +
-                '}';
+        return value + "";
     }
 }
