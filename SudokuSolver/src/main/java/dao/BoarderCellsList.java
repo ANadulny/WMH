@@ -1,29 +1,49 @@
 package dao;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class BoarderCellsList {
-    List<Cell> numbers;
+    List<Cell> cells;
 
-    public BoarderCellsList(List<Cell> numbers) {
-        this.numbers = numbers;
+    public BoarderCellsList(List<Cell> cells) {
+        this.cells = cells;
     }
 
     public boolean hasDiffNumbers() {
-        Set<Cell> set = new HashSet<>(numbers);
-        return set.size() == numbers.size();
+        Set<Cell> set = new HashSet<>(cells);
+        return set.size() == cells.size();
     }
 
-    public List<Cell> getNumbers() {
-        return numbers;
+    public int countDifferentElements(){
+        int numOfDifferentVals = 0;
+        ArrayList<Integer> diffNum = new ArrayList<>();
+        for (Cell cell : this.cells) {
+            if (!diffNum.contains(cell.getValue())) {
+                diffNum.add(cell.getValue());
+            }
+        }
+
+        if(diffNum.size()==1){
+            numOfDifferentVals = 0;
+        }
+        else{
+            numOfDifferentVals = diffNum.size();
+        }
+
+        return numOfDifferentVals;
+    }
+
+    public List<Cell> getCells() {
+        return cells;
     }
 
     @Override
     public String toString() {
         return "BoarderCellsList{" +
-                "numbers=" + numbers +
+                "numbers=" + cells +
                 '}';
     }
 }

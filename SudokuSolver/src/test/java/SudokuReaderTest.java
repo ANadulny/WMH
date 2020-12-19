@@ -61,8 +61,8 @@ public class SudokuReaderTest {
     }
 
     private boolean hasCorrectNumberPosition(BoarderCellsList testList, BoarderCellsList solutionList) {
-        List<Cell> test = testList.getNumbers();
-        List<Cell> solution = solutionList.getNumbers();
+        List<Cell> test = testList.getCells();
+        List<Cell> solution = solutionList.getCells();
         if (test.size() != solution.size()) {
             return false;
         }

@@ -3,10 +3,9 @@ package sudoku.solver;
 import dao.Board;
 import dao.Cell;
 import dao.Movement;
+import javafx.util.Pair;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class SudokuSolver {
     private Board board;
@@ -27,12 +26,14 @@ public class SudokuSolver {
 
         for(int i = 0; i < maxIterations; i++){
             List<Movement> movementList = this.board.generateAllMovements();
-            List<Board> neighbours = new LinkedList<>();
+            List<Pair<Board, Integer>> neighbours = new ArrayList<>();
             for(Movement movement : movementList){
                 Cell[][] cells = Arrays.stream(this.board.getBoard()).map(Cell[]::clone).toArray(Cell[][]::new);
-                Board board = new Board(cells);
-                neighbours.add(board.executeMovement(movement));
+                Board board = new Board(cells).executeMovement(movement);
+                Integer conflictedPositions = board.calculateNumberOfConflictedPosition();
+                neighbours.add(new Pair<>(board, conflictedPositions));
             }
+            neighbours.sort(Comparator.comparingInt(Pair::getValue));
 
 
 

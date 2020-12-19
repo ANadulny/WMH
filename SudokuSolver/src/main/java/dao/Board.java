@@ -101,6 +101,26 @@ public class Board {
         return movementsList;
     }
 
+    public int calculateNumberOfConflictedPosition(){
+        int conflicts = 0;
+        for(int i = 0; i < 9; i++){
+            BoarderCellsList boarderCellsList = this.getColumn(i);
+            //if row/column is valid, then value below should be 9
+            int differentElements = boarderCellsList.countDifferentElements();
+            int wrongPosisitions = 9 - differentElements;
+            conflicts += wrongPosisitions;
+        }
+        for(int i = 0; i < 9; i++){
+            BoarderCellsList boarderCellsList = this.getRow(i);
+            int differentElements = boarderCellsList.countDifferentElements();
+            int wrongPosisitions = 9 - differentElements;
+            conflicts += wrongPosisitions;
+        }
+
+
+        return conflicts;
+    }
+
     @Override
     public String toString() {
         String result = Arrays
