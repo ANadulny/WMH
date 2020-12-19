@@ -1,5 +1,6 @@
 import dao.Board;
 import dao.BoarderCellsList;
+import dao.Cell;
 import org.testng.annotations.Test;
 import sudoku.reader.SudokuReader;
 
@@ -60,14 +61,14 @@ public class SudokuReaderTest {
     }
 
     private boolean hasCorrectNumberPosition(BoarderCellsList testList, BoarderCellsList solutionList) {
-        List<Integer> test = testList.getNumbers();
-        List<Integer> solution = solutionList.getNumbers();
+        List<Cell> test = testList.getNumbers();
+        List<Cell> solution = solutionList.getNumbers();
         if (test.size() != solution.size()) {
             return false;
         }
 
         for(int i = 0; i < test.size(); i++) {
-            if (!test.get(i).equals(0) && !test.get(i).equals(solution.get(i))) {
+            if (test.get(i).getValue() != 0 && test.get(i).getValue() != solution.get(i).getValue()) {
                 return false;
             }
         }

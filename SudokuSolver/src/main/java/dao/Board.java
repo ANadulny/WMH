@@ -24,32 +24,24 @@ public class Board {
         board[position.x][position.y].setValue(value);
     }
 
-    public void executeMovement(Movement movement) {
-        int tmp = getValueByPos(movement.getFirstPos());
-        this.getCellByPos(movement.getFirstPos()).setValue(getValueByPos(movement.getSecondPos()));
-        this.getCellByPos(movement.getSecondPos()).setValue(tmp);
-    }
-
-    public Cell getCellByPos(Position position){
-        return this.board[position.x][position.y];
-    }
-
-    public int getValueByPos(Position position){
-        return this.board[position.x][position.y].getValue();
+    public void swapNumbersByPosition(Position p1, Position p2) {
+        Cell tmp = board[p1.x][p1.y];
+        board[p1.x][p1.y] = board[p2.x][p2.y];
+        board[p2.x][p2.y] = tmp;
     }
 
     public BoarderCellsList getRow(int number) {
-        List<Integer> numbers = new ArrayList<>();
+        List<Cell> numbers = new ArrayList<>();
         for (int i = 0; i < 9; i++) {
-            numbers.add(board[number][i].getValue());
+            numbers.add(board[number][i]);
         }
         return new BoarderCellsList(numbers);
     }
 
     public BoarderCellsList getColumn(int number) {
-        List<Integer> numbers = new ArrayList<>();
+        List<Cell> numbers = new ArrayList<>();
         for (int i = 0; i < 9; i++) {
-            numbers.add(board[i][number].getValue());
+            numbers.add(board[i][number]);
         }
         return new BoarderCellsList(numbers);
     }
