@@ -12,51 +12,19 @@ public class Helper {
     private Helper(){}
 
     static public List<Movement> movementListForSubgrid(int xOffset, int yOffset){
+        List<Position> positionList = new LinkedList<>();
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                positionList.add(new Position(i+xOffset, j+yOffset));
+            }
+        }
+
         List<Movement> listForSubgrid = new LinkedList<>();
-        listForSubgrid.add(new Movement(new Position(0+xOffset,0+yOffset), new Position(0+xOffset,1+yOffset)));
-        listForSubgrid.add(new Movement(new Position(0+xOffset,0+yOffset), new Position(0+xOffset,2+yOffset)));
-        listForSubgrid.add(new Movement(new Position(0+xOffset,0+yOffset), new Position(1+xOffset,0+yOffset)));
-        listForSubgrid.add(new Movement(new Position(0+xOffset,0+yOffset), new Position(1+xOffset,1+yOffset)));
-        listForSubgrid.add(new Movement(new Position(0+xOffset,0+yOffset), new Position(1+xOffset,2+yOffset)));
-        listForSubgrid.add(new Movement(new Position(0+xOffset,0+yOffset), new Position(2+xOffset,0+yOffset)));
-        listForSubgrid.add(new Movement(new Position(0+xOffset,0+yOffset), new Position(2+xOffset,1+yOffset)));
-        listForSubgrid.add(new Movement(new Position(0+xOffset,0+yOffset), new Position(2+xOffset,2+yOffset)));
-
-        listForSubgrid.add(new Movement(new Position(0+xOffset,1+yOffset), new Position(0+xOffset,2+yOffset)));
-        listForSubgrid.add(new Movement(new Position(0+xOffset,1+yOffset), new Position(1+xOffset,0+yOffset)));
-        listForSubgrid.add(new Movement(new Position(0+xOffset,1+yOffset), new Position(1+xOffset,1+yOffset)));
-        listForSubgrid.add(new Movement(new Position(0+xOffset,1+yOffset), new Position(1+xOffset,2+yOffset)));
-        listForSubgrid.add(new Movement(new Position(0+xOffset,1+yOffset), new Position(2+xOffset,0+yOffset)));
-        listForSubgrid.add(new Movement(new Position(0+xOffset,1+yOffset), new Position(2+xOffset,1+yOffset)));
-        listForSubgrid.add(new Movement(new Position(0+xOffset,1+yOffset), new Position(2+xOffset,2+yOffset)));
-
-        listForSubgrid.add(new Movement(new Position(0+xOffset,2+yOffset), new Position(1+xOffset,0+yOffset)));
-        listForSubgrid.add(new Movement(new Position(0+xOffset,2+yOffset), new Position(1+xOffset,1+yOffset)));
-        listForSubgrid.add(new Movement(new Position(0+xOffset,2+yOffset), new Position(1+xOffset,2+yOffset)));
-        listForSubgrid.add(new Movement(new Position(0+xOffset,2+yOffset), new Position(2+xOffset,0+yOffset)));
-        listForSubgrid.add(new Movement(new Position(0+xOffset,2+yOffset), new Position(2+xOffset,1+yOffset)));
-        listForSubgrid.add(new Movement(new Position(0+xOffset,2+yOffset), new Position(2+xOffset,2+yOffset)));
-
-        listForSubgrid.add(new Movement(new Position(1+xOffset,0+yOffset), new Position(1+xOffset,1+yOffset)));
-        listForSubgrid.add(new Movement(new Position(1+xOffset,0+yOffset), new Position(1+xOffset,2+yOffset)));
-        listForSubgrid.add(new Movement(new Position(1+xOffset,0+yOffset), new Position(2+xOffset,0+yOffset)));
-        listForSubgrid.add(new Movement(new Position(1+xOffset,0+yOffset), new Position(2+xOffset,1+yOffset)));
-        listForSubgrid.add(new Movement(new Position(1+xOffset,0+yOffset), new Position(2+xOffset,2+yOffset)));
-
-        listForSubgrid.add(new Movement(new Position(1+xOffset,1+yOffset), new Position(1+xOffset,2+yOffset)));
-        listForSubgrid.add(new Movement(new Position(1+xOffset,1+yOffset), new Position(2+xOffset,0+yOffset)));
-        listForSubgrid.add(new Movement(new Position(1+xOffset,1+yOffset), new Position(2+xOffset,1+yOffset)));
-        listForSubgrid.add(new Movement(new Position(1+xOffset,1+yOffset), new Position(2+xOffset,2+yOffset)));
-
-        listForSubgrid.add(new Movement(new Position(1+xOffset,2+yOffset), new Position(2+xOffset,0+yOffset)));
-        listForSubgrid.add(new Movement(new Position(1+xOffset,2+yOffset), new Position(2+xOffset,1+yOffset)));
-        listForSubgrid.add(new Movement(new Position(1+xOffset,2+yOffset), new Position(2+xOffset,2+yOffset)));
-
-        listForSubgrid.add(new Movement(new Position(2+xOffset,0+yOffset), new Position(2+xOffset,1+yOffset)));
-        listForSubgrid.add(new Movement(new Position(2+xOffset,0+yOffset), new Position(2+xOffset,2+yOffset)));
-
-        listForSubgrid.add(new Movement(new Position(2+xOffset,1+yOffset), new Position(2+xOffset,2+yOffset)));
-
+        for (int i = 0; i < positionList.size() - 1; i++) {
+            for (int j = i + 1; j < positionList.size(); j++) {
+                listForSubgrid.add(new Movement(positionList.get(i), positionList.get(j)));
+            }
+        }
         return listForSubgrid;
     }
 }

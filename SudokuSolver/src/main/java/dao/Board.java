@@ -1,11 +1,12 @@
 package dao;
 
+import sudoku.helper.Helper;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
-import sudoku.helper.Helper;
 
 public class Board {
     private final Cell [][] board;
@@ -22,6 +23,7 @@ public class Board {
         return board;
     }
 
+    //TODO remove ?
     public void insert(Position position, int value) {
         board[position.x][position.y].setValue(value);
     }
