@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class BoarderCellsList {
     List<Cell> cells;
@@ -13,7 +14,8 @@ public class BoarderCellsList {
     }
 
     public boolean hasDiffNumbers() {
-        Set<Cell> set = new HashSet<>(cells);
+        List<Integer> numbers = cells.stream().map(cell -> cell.getValue()).collect(Collectors.toList());
+        Set<Integer> set = new HashSet<>(numbers);
         return set.size() == cells.size();
     }
 

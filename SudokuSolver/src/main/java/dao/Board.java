@@ -23,11 +23,6 @@ public class Board {
         return board;
     }
 
-    //TODO remove ?
-    public void insert(Position position, int value) {
-        board[position.x][position.y].setValue(value);
-    }
-
     public Board executeMovement(Movement movement){
         Cell tmp = this.getCellByPos(movement.getFirstPos());
         board[movement.getFirstPos().x][movement.getFirstPos().y] = this.getCellByPos(movement.getSecondPos());
@@ -55,14 +50,13 @@ public class Board {
     public void fillZeroesWithNumbers(){
         //x - 0-2,3-5,6-8       0-0, 1-3, 2-6
         //y - 0-2,3-5,6-8
-
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){
-                List<Integer> valuesForSubgrid = this.getValuesForSubgrid(i,j);
-                for(int x = i*3; x < (i+1)*3; x++){
-                    for(int y = j*3; y < (j+1)*3; y++){
+                List<Integer> valuesForSubgrid = this.getValuesForSubgrid(i, j);
+                for(int x = i * 3; x < (i + 1) * 3; x++){
+                    for(int y = j * 3; y < (j + 1) * 3; y++){
                         if(this.board[x][y].getValue() == 0){
-                            this.board[x][y].setValue(valuesForSubgrid.get(0));
+                            insert(new Position(x, y), valuesForSubgrid.get(0));
                             valuesForSubgrid.remove(valuesForSubgrid.get(0));
                         }
                     }
@@ -76,8 +70,8 @@ public class Board {
         for(int k = 1; k < 10; k++){
             valuesForSubgrid.add(k);
         }
-        for(int x = i*3; x < (i+1)*3; x++){
-            for(int y = j*3; y < (j+1)*3; y++){
+        for(int x = i * 3; x < (i + 1) * 3; x++){
+            for(int y = j * 3; y < (j + 1) * 3; y++){
                 if(this.board[x][y].getValue() != 0)
                     valuesForSubgrid.remove((Object)this.board[x][y].getValue());
             }
@@ -90,7 +84,7 @@ public class Board {
         List<Movement> movementsToRemove = new LinkedList<>();
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){
-                movementsList.addAll(Helper.movementListForSubgrid(i*3, j*3));
+                movementsList.addAll(Helper.movementListForSubgrid(i * 3, j * 3));
             }
         }
         //remove impossible movemenets
@@ -118,9 +112,11 @@ public class Board {
             int wrongPosisitions = 9 - differentElements;
             conflicts += wrongPosisitions;
         }
-
-
         return conflicts;
+    }
+
+    private void insert(Position position, int value) {
+        board[position.x][position.y].setValue(value);
     }
 
     @Override

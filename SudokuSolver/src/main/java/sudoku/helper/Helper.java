@@ -6,7 +6,6 @@ import dao.Position;
 import java.util.LinkedList;
 import java.util.List;
 
-
 public class Helper {
 
     private Helper(){}

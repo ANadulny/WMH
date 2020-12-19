@@ -8,22 +8,22 @@ import javafx.util.Pair;
 import java.util.*;
 
 public class SudokuSolver {
+    private final int maxIterations;
+    private final int tabuSize;
+    private final int memSize;
+
     private Board board;
     private Board bestResult;
-    private int maxIterations;
-    private int memSize;
 
-
-    public SudokuSolver(Board board, int maxIterations, int memSize){
+    public SudokuSolver(Board board, int maxIterations, int tabuSize, int memSize){
         this.board = board;
         this.maxIterations = maxIterations;
+        this.tabuSize = tabuSize;
         this.memSize = memSize;
     }
 
     public Board solveSudoku(){
         this.board.fillZeroesWithNumbers();
-
-
         for(int i = 0; i < maxIterations; i++){
             List<Movement> movementList = this.board.generateAllMovements();
             List<Pair<Board, Integer>> neighbours = new ArrayList<>();
@@ -34,13 +34,11 @@ public class SudokuSolver {
                 neighbours.add(new Pair<>(board, conflictedPositions));
             }
             neighbours.sort(Comparator.comparingInt(Pair::getValue));
-
-
-
         }
         return this.bestResult;
     }
 
-
-
+    public Board getBestResult() {
+        return bestResult;
+    }
 }
