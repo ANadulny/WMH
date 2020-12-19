@@ -16,7 +16,9 @@ public class SudokuSolver {
     }
 
     public Board solveSudoku(){
-        this.board.fillZeroesWithNubmers();
+        this.board.fillZeroesWithNumbers();
+
+
 
         return this.bestResult;
     }

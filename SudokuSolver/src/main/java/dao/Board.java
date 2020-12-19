@@ -24,10 +24,18 @@ public class Board {
         board[position.x][position.y].setValue(value);
     }
 
-    public void swapNumbersByPosition(Position p1, Position p2) {
-        int tmp = board[p1.x][p1.y].getValue();
-        board[p1.x][p1.y].setValue(board[p2.x][p2.y].getValue());
-        board[p2.x][p2.y].setValue(tmp);
+    public void executeMovement(Movement movement) {
+        int tmp = getValueByPos(movement.getFirstPos());
+        this.getCellByPos(movement.getFirstPos()).setValue(getValueByPos(movement.getSecondPos()));
+        this.getCellByPos(movement.getSecondPos()).setValue(tmp);
+    }
+
+    public Cell getCellByPos(Position position){
+        return this.board[position.x][position.y];
+    }
+
+    public int getValueByPos(Position position){
+        return this.board[position.x][position.y].getValue();
     }
 
     public BoarderCellsList getRow(int number) {
@@ -46,7 +54,7 @@ public class Board {
         return new BoarderCellsList(numbers);
     }
 
-    public void fillZeroesWithNubmers(){
+    public void fillZeroesWithNumbers(){
         //x - 0-2,3-5,6-8       0-0, 1-3, 2-6
         //y - 0-2,3-5,6-8
 
