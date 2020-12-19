@@ -1,8 +1,6 @@
 package sudoku.solver;
 
-import dao.Board;
-import dao.Cell;
-import dao.Movement;
+import dao.*;
 import javafx.util.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,10 +12,9 @@ import java.util.List;
 
 public class SudokuSolver {
     private final int maxIterations;
-    private final int tabuSize;
-    private final int memSize;
-
-    private Logger logger = LoggerFactory.getLogger(SudokuSolver.class);
+    private final Logger logger = LoggerFactory.getLogger(SudokuSolver.class);
+    private final TabuList tabuList;
+    private final MemoryList memoryList;
 
     private Board board;
     private Board bestResult;
@@ -25,8 +22,8 @@ public class SudokuSolver {
     public SudokuSolver(Board board, int maxIterations, int tabuSize, int memSize){
         this.board = board;
         this.maxIterations = maxIterations;
-        this.tabuSize = tabuSize;
-        this.memSize = memSize;
+        this.tabuList = new TabuList(tabuSize);
+        this.memoryList = new MemoryList(memSize);
     }
 
     public Board solveSudoku(){
