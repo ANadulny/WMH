@@ -1,6 +1,6 @@
 package dao;
 
-public class Cell {
+public class Cell implements Cloneable{
     private int value;
     private boolean isOriginal;
 

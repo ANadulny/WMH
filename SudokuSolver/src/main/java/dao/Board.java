@@ -2,11 +2,13 @@ package dao;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
+import sudoku.helper.Helper;
 
 public class Board {
-    private Cell [][] board;
+    private final Cell [][] board;
 
     public Board(Cell [][] board) {
         this.board = board;
@@ -24,17 +26,19 @@ public class Board {
         board[position.x][position.y].setValue(value);
     }
 
-    public void swapNumbersByPosition(Position p1, Position p2) {
-        Cell tmp = board[p1.x][p1.y];
-        board[p1.x][p1.y] = board[p2.x][p2.y];
-        board[p2.x][p2.y] = tmp;
+    public Board executeMovement(Movement movement){
+        Cell tmp = this.getCellByPos(movement.getFirstPos());
+        board[movement.getFirstPos().x][movement.getFirstPos().y] = this.getCellByPos(movement.getSecondPos());
+        board[movement.getSecondPos().x][movement.getSecondPos().y] = tmp;
+        return this;
+    }
+
+    public Cell getCellByPos(Position pos){
+        return this.board[pos.x][pos.y];
     }
 
     public BoarderCellsList getRow(int number) {
-        List<Cell> numbers = new ArrayList<>();
-        for (int i = 0; i < 9; i++) {
-            numbers.add(board[number][i]);
-        }
+        List<Cell> numbers = new ArrayList<>(Arrays.asList(board[number]).subList(0, 9));
         return new BoarderCellsList(numbers);
     }
 
@@ -77,6 +81,24 @@ public class Board {
             }
         }
         return valuesForSubgrid;
+    }
+
+    public List<Movement> generateAllMovements(){
+        List<Movement> movementsList = new LinkedList<>();
+        List<Movement> movementsToRemove = new LinkedList<>();
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                movementsList.addAll(Helper.movementListForSubgrid(i*3, j*3));
+            }
+        }
+        //remove impossible movemenets
+        for (Movement mov : movementsList) {
+            if (this.getCellByPos(mov.getFirstPos()).isOriginal() || this.getCellByPos(mov.getSecondPos()).isOriginal()) {
+                movementsToRemove.add(mov);
+            }
+        }
+        movementsList.removeAll(movementsToRemove);
+        return movementsList;
     }
 
     @Override
