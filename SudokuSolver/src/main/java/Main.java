@@ -14,7 +14,7 @@ public class Main {
         String level = "easy";
         if (level.equals("easy") || level.equals("middle") || level.equals("hard")) {
             Board testBoard = sudokuReader.readSudokuFromFile(level, "tests",  "1.txt");
-            SudokuSolver solver = new SudokuSolver(testBoard, 1000, 0, 0);
+            SudokuSolver solver = new SudokuSolver(testBoard, 1, 0, 0);
             solver.solveSudoku();
             System.out.println("Best result");
             System.out.println(solver.getBestResult());

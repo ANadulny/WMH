@@ -4,13 +4,20 @@ import dao.Board;
 import dao.Cell;
 import dao.Movement;
 import javafx.util.Pair;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 
 public class SudokuSolver {
     private final int maxIterations;
     private final int tabuSize;
     private final int memSize;
+
+    private Logger logger = LoggerFactory.getLogger(SudokuSolver.class);
 
     private Board board;
     private Board bestResult;
@@ -26,6 +33,8 @@ public class SudokuSolver {
         this.board.fillZeroesWithNumbers();
         for(int i = 0; i < maxIterations; i++){
             List<Movement> movementList = this.board.generateAllMovements();
+            logger.info("Movements for iteration " + (i + 1));
+            logger.info(movementList.toString());
             List<Pair<Board, Integer>> neighbours = new ArrayList<>();
             for(Movement movement : movementList){
                 Cell[][] cells = Arrays.stream(this.board.getBoard()).map(Cell[]::clone).toArray(Cell[][]::new);
@@ -34,6 +43,10 @@ public class SudokuSolver {
                 neighbours.add(new Pair<>(board, conflictedPositions));
             }
             neighbours.sort(Comparator.comparingInt(Pair::getValue));
+            if (neighbours.size() > 0) {
+                logger.info("Neighbour on first position");
+                logger.info(neighbours.get(1).toString());
+            }
         }
         return this.bestResult;
     }

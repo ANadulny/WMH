@@ -16,4 +16,9 @@ public class Movement {
     public Position getSecondPos(){
         return this.secondCell;
     }
+
+    @Override
+    public String toString() {
+        return firstCell + " -> " + secondCell;
+    }
 }
