@@ -27,27 +27,36 @@ public class SudokuSolver {
 
     public Board solveSudoku(){
         this.board.fillZeroesWithNumbers();
-        for(int i = 0; i < maxIterations; i++){
-            logger.info("Iteration [" + (i + 1) + "]");
+        int iterator = 0;
+        while (iterator < maxIterations && this.board.calculateNumberOfConflictedPosition() != 0) {
+            logger.info("Iteration [" + (iterator + 1) + "]");
+            logger.info("Generating movements:");
             List<Movement> movementList = this.board.generateAllMovements();
-            logger.info("Movements:");
             logger.info(movementList.toString());
             List<NeighbourState> neighbours = new ArrayList<>();
+            logger.info("Searching neighbours:");
             for(Movement movement : movementList){
                 Cell[][] cells = Arrays.stream(this.board.getBoard()).map(Cell[]::clone).toArray(Cell[][]::new);
                 Board board = new Board(cells).executeMovement(movement);
                 neighbours.add(new NeighbourState(board, movement, board.calculateNumberOfConflictedPosition()));
             }
             neighbours.sort(Comparator.comparingInt(NeighbourState::getConflictedPositions));
-
-            if (neighbours.size() > 0) {
-                logger.info("Neighbour on first position");
-                logger.info(neighbours.get(0).toString());
-                tabuList.addElement(neighbours.get(0));
-                logger.info("Current tabulist size " + tabuList.getCurrentTabuSize());
-                this.board = neighbours.get(0).getState();
+            if (neighbours.size() <= 0) {
+                logger.error("Neighbour list size is <= 0");
+                return this.board;
             }
+
+            // TODO check if state is in TABU and following state has the same conflict values
+
+            logger.info("Neighbour on first position");
+            logger.info(neighbours.get(0).toString());
+            tabuList.addElement(neighbours.get(0));
+            logger.info("Current tabu list size " + tabuList.getCurrentTabuSize());
+            this.board = neighbours.get(0).getState();
+
+            iterator++;
         }
+        this.bestResult = this.board;
         return this.bestResult;
     }
 
