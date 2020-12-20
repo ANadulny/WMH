@@ -31,17 +31,17 @@ public class Board {
         return this.board[pos.x][pos.y];
     }
 
-    public BoarderCellsList getRow(int number) {
+    public CellsList getRow(int number) {
         List<Cell> numbers = new ArrayList<>(Arrays.asList(board[number]).subList(0, 9));
-        return new BoarderCellsList(numbers);
+        return new CellsList(numbers);
     }
 
-    public BoarderCellsList getColumn(int number) {
+    public CellsList getColumn(int number) {
         List<Cell> numbers = new ArrayList<>();
         for (int i = 0; i < 9; i++) {
             numbers.add(board[i][number]);
         }
-        return new BoarderCellsList(numbers);
+        return new CellsList(numbers);
     }
 
     public void fillZeroesWithNumbers(){
@@ -99,14 +99,14 @@ public class Board {
     public int calculateNumberOfConflictedPosition(){
         int conflicts = 0;
         for(int i = 0; i < 9; i++){
-            BoarderCellsList boarderCellsList = this.getColumn(i);
+            CellsList boarderCellsList = this.getColumn(i);
             //if row/column is valid, then value below should be 9
             int differentElements = boarderCellsList.countDifferentElements();
             int wrongPosisitions = 9 - differentElements;
             conflicts += wrongPosisitions;
         }
         for(int i = 0; i < 9; i++){
-            BoarderCellsList boarderCellsList = this.getRow(i);
+            CellsList boarderCellsList = this.getRow(i);
             int differentElements = boarderCellsList.countDifferentElements();
             int wrongPosisitions = 9 - differentElements;
             conflicts += wrongPosisitions;

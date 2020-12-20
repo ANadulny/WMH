@@ -1,5 +1,5 @@
 import dao.Board;
-import dao.BoarderCellsList;
+import dao.CellsList;
 import dao.Cell;
 import org.testng.annotations.Test;
 import sudoku.reader.SudokuReader;
@@ -33,8 +33,8 @@ public class SudokuReaderTest {
             for (int i = 1; i <= 10; i++) {
                 Board solutionBoard = sudokuReader.readSudokuFromFile(level, "solutions", i + ".txt");
                 for (int j = 0; j < 9; j++) {
-                    BoarderCellsList row = solutionBoard.getRow(j);
-                    BoarderCellsList column = solutionBoard.getColumn(j);
+                    CellsList row = solutionBoard.getRow(j);
+                    CellsList column = solutionBoard.getColumn(j);
                     if (!row.hasDiffNumbers() || !column.hasDiffNumbers()) {
                         fail("Sudoku solution on level " + level + " from file " + i + ".txt has failed. Numbers in all rows and columns must be different.");
                     }
@@ -60,7 +60,7 @@ public class SudokuReaderTest {
         }
     }
 
-    private boolean hasCorrectNumberPosition(BoarderCellsList testList, BoarderCellsList solutionList) {
+    private boolean hasCorrectNumberPosition(CellsList testList, CellsList solutionList) {
         List<Cell> test = testList.getCells();
         List<Cell> solution = solutionList.getCells();
         if (test.size() != solution.size()) {

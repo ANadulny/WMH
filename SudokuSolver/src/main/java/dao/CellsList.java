@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class BoarderCellsList {
+public class CellsList {
     List<Cell> cells;
 
-    public BoarderCellsList(List<Cell> cells) {
+    public CellsList(List<Cell> cells) {
         this.cells = cells;
     }
 
