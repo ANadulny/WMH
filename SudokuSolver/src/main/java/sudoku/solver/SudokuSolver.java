@@ -42,7 +42,7 @@ public class SudokuSolver {
             neighbours.sort(Comparator.comparingInt(Pair::getValue));
             if (neighbours.size() > 0) {
                 logger.info("Neighbour on first position");
-                logger.info(neighbours.get(1).toString());
+                logger.info(neighbours.get(0).toString());
             }
         }
         return this.bestResult;

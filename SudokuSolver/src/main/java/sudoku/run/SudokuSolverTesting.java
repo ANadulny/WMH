@@ -11,6 +11,8 @@ public class SudokuSolverTesting {
     private static final Logger logger = LoggerFactory.getLogger(SudokuSolverTesting.class);
 
     public static void main(String[] args) {
+        logger.info("SudokuSolverTesting");
+        logger.info("/////////////////////////////////////////////////////////////////////////////");
         SudokuReader sudokuReader = new SudokuReader();
         Board testBoard = sudokuReader.readSudokuFromFile("easy", "tests",  "1.txt");
         SudokuSolver solver = new SudokuSolver(testBoard, 5, 0, 0);
