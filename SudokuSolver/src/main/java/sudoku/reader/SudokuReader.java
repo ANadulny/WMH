@@ -22,12 +22,12 @@ public class SudokuReader {
             String line = br.readLine();
             int iteration = 0;
             do {
-                String[] elements = line.split("\s");
+                String[] elements = line.split("\\s");
                 List<Integer> numbers = Arrays.stream(elements)
                         .map(row -> isNumeric(row) ? Integer.parseInt(row) : 0)
                         .collect(Collectors.toList());
                 for (int i = 0; i < 9; i++) {
-                    matrix[iteration][i] = new Cell(numbers.get(i));
+                    matrix[iteration][i] = numbers.get(i) == 0 ? new Cell(0,false) : new Cell(numbers.get(i), true);
                 }
                 line = br.readLine();
                 iteration++;

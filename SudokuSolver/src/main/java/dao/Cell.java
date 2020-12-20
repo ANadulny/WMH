@@ -1,34 +1,33 @@
 package dao;
 
-public class Cell {
+public class Cell implements Cloneable{
+    private final boolean isOriginal;
     private int value;
-    private boolean filled;
 
     public Cell(){
         this(0);
     }
 
     public Cell(int value){
-        filled = false;
         this.value = value;
+        this.isOriginal = false;
     }
 
-    public boolean isFilled() {
-        return filled;
+    public Cell(int value, boolean isOriginal){
+        this.value = value;
+        this.isOriginal = isOriginal;
     }
 
     public int getValue() {
-        return value;
+        return this.value;
     }
 
-    public void setValue(final int number){
-        filled = true;
-        value = number;
+    public void setValue(final int value){
+        this.value = value;
     }
 
-    public void clear() {
-        value = 0;
-        filled = false;
+    public boolean isOriginal() {
+        return this.isOriginal;
     }
 
     @Override
