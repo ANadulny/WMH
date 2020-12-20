@@ -1,7 +1,6 @@
 package sudoku.solver;
 
 import dao.*;
-import javafx.util.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,20 +28,24 @@ public class SudokuSolver {
     public Board solveSudoku(){
         this.board.fillZeroesWithNumbers();
         for(int i = 0; i < maxIterations; i++){
+            logger.info("Iteration [" + (i + 1) + "]");
             List<Movement> movementList = this.board.generateAllMovements();
-            logger.info("Movements for iteration " + (i + 1));
+            logger.info("Movements:");
             logger.info(movementList.toString());
-            List<Pair<Board, Integer>> neighbours = new ArrayList<>();
+            List<NeighbourState> neighbours = new ArrayList<>();
             for(Movement movement : movementList){
                 Cell[][] cells = Arrays.stream(this.board.getBoard()).map(Cell[]::clone).toArray(Cell[][]::new);
                 Board board = new Board(cells).executeMovement(movement);
-                Integer conflictedPositions = board.calculateNumberOfConflictedPosition();
-                neighbours.add(new Pair<>(board, conflictedPositions));
+                neighbours.add(new NeighbourState(board, movement, board.calculateNumberOfConflictedPosition()));
             }
-            neighbours.sort(Comparator.comparingInt(Pair::getValue));
+            neighbours.sort(Comparator.comparingInt(NeighbourState::getConflictedPositions));
+
             if (neighbours.size() > 0) {
                 logger.info("Neighbour on first position");
                 logger.info(neighbours.get(0).toString());
+                tabuList.addElement(neighbours.get(0));
+                logger.info("Current tabulist size " + tabuList.getCurrentTabuSize());
+                this.board = neighbours.get(0).getState();
             }
         }
         return this.bestResult;
