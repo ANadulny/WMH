@@ -39,6 +39,15 @@ public class TabuList {
         return tabu.size();
     }
 
+    public boolean hasNeighbourState(NeighbourState neighbourState) {
+        for (NeighbourState nState: tabu) {
+            if (nState.equals(neighbourState)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return "TabuList{\n" +

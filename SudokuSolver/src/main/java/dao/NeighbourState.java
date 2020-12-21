@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.Objects;
+
 public class NeighbourState {
     private Board state;
     private Movement movementToState;
@@ -30,5 +32,20 @@ public class NeighbourState {
                 "\nmovementToState=" + movementToState +
                 "\nconflictedPositions=" + conflictedPositions +
                 "\n}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        NeighbourState that = (NeighbourState) o;
+        return conflictedPositions == that.conflictedPositions &&
+                state.equals(that.state) &&
+                movementToState.equals(that.movementToState);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(state, movementToState, conflictedPositions);
     }
 }

@@ -126,4 +126,22 @@ public class Board {
             .collect(Collectors.joining(System.lineSeparator()));
         return "Board:\n" + result;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Board board1 = (Board) o;
+        for (int i = 0; i < board.length; i++) {
+            if (i >= board1.size() || !Arrays.equals(board[i], board1.board[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(board);
+    }
 }

@@ -40,22 +40,46 @@ public class SudokuSolver {
                 Board board = new Board(cells).executeMovement(movement);
                 neighbours.add(new NeighbourState(board, movement, board.calculateNumberOfConflictedPosition()));
             }
+
             neighbours.sort(Comparator.comparingInt(NeighbourState::getConflictedPositions));
             if (neighbours.size() <= 0) {
                 logger.error("Neighbour list size is <= 0");
                 return this.board;
             }
 
-            // TODO check if state is in TABU and following state has the same conflict values
-
-            logger.info("Neighbour on first position");
-            logger.info(neighbours.get(0).toString());
-            tabuList.addElement(neighbours.get(0));
-            logger.info("Current tabu list size " + tabuList.getCurrentTabuSize());
-            this.board = neighbours.get(0).getState();
-
+            int i = 0;
+            boolean isFoundFollowingBoard = false;
+            NeighbourState bestTabuNeighbourState = null;
+            // TODO add second condition
+            while (i < neighbours.size() && !isFoundFollowingBoard) {
+                logger.info("Neighbour on position: [" + i + "]");
+                logger.info(neighbours.get(i).toString());
+                // TODO place to add memory list use
+                if (tabuList.hasNeighbourState(neighbours.get(i))) {
+                    if (bestTabuNeighbourState == null) {
+                        bestTabuNeighbourState = neighbours.get(i);
+                        logger.info("Setting best tabu neighbour state  for: " + bestTabuNeighbourState);
+                    }
+                } else {
+                    logger.info("Non tabu best neighbour state is: " + neighbours.get(i));
+                    int bestTabuConflictPositions = bestTabuNeighbourState != null ? bestTabuNeighbourState.getConflictedPositions() : Integer.MAX_VALUE;
+                    int bestNonTabuConfilctsPositions = neighbours.get(i).getConflictedPositions();
+                    logger.info("Tabu conflict positions = " + bestTabuConflictPositions + "; Non tabu conflict positions = " + bestNonTabuConfilctsPositions);
+                    if (bestTabuConflictPositions > bestNonTabuConfilctsPositions) {
+                        this.board = neighbours.get(0).getState();
+                        tabuList.addElement(neighbours.get(0));
+                    } else {
+                        this.board = bestTabuNeighbourState.getState();
+                        // TODO update bestTabuNeighbourState position in tabu?
+                    }
+                    logger.info("Chosen board: " + this.board);
+                    isFoundFollowingBoard = true;
+                    continue;
+                }
+                i++;
+            } // end while loop
             iterator++;
-        }
+        }  // end while loop
         this.bestResult = this.board;
         return this.bestResult;
     }
