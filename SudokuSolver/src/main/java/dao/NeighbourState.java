@@ -4,21 +4,15 @@ import java.util.Objects;
 
 public class NeighbourState {
     private Board state;
-    private Movement movementToState;
     private int conflictedPositions;
 
-    public NeighbourState(Board state, Movement movementToState, int conflictedPositions) {
+    public NeighbourState(Board state, int conflictedPositions) {
         this.state = state;
-        this.movementToState = movementToState;
         this.conflictedPositions = conflictedPositions;
     }
 
     public Board getState() {
         return state;
-    }
-
-    public Movement getMovementToState() {
-        return movementToState;
     }
 
     public int getConflictedPositions() {
@@ -28,7 +22,6 @@ public class NeighbourState {
     @Override
     public String toString() {
         return "NeighbourState{" +
-                "\nmovementToState=" + movementToState +
                 "\nconflictedPositions=" + conflictedPositions +
                 "\n}";
     }
@@ -39,12 +32,11 @@ public class NeighbourState {
         if (o == null || getClass() != o.getClass()) return false;
         NeighbourState that = (NeighbourState) o;
         return conflictedPositions == that.conflictedPositions &&
-                state.equals(that.state) &&
-                movementToState.equals(that.movementToState);
+                state.equals(that.state);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(state, movementToState, conflictedPositions);
+        return Objects.hash(state, conflictedPositions);
     }
 }

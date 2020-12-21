@@ -30,6 +30,7 @@ public class SudokuSolver {
         int iterator = 0;
         final int NUMBER_DIFF = 4;
         while (iterator < maxIterations && this.board.calculateNumberOfConflictedPosition() != 0) {
+            System.out.println(iterator);
             logger.info("Iteration [" + (iterator + 1) + "]");
             logger.info("Generating movements:");
             List<Movement> movementList = this.board.generateAllMovements();
@@ -39,7 +40,7 @@ public class SudokuSolver {
             for(Movement movement : movementList){
                 Cell[][] cells = Arrays.stream(this.board.getBoard()).map(Cell[]::clone).toArray(Cell[][]::new);
                 Board board = new Board(cells).executeMovement(movement);
-                neighbours.add(new NeighbourState(board, movement, board.calculateNumberOfConflictedPosition()));
+                neighbours.add(new NeighbourState(board, board.calculateNumberOfConflictedPosition()));
             }
 
             neighbours.sort(Comparator.comparingInt(NeighbourState::getConflictedPositions));
