@@ -28,7 +28,6 @@ public class NeighbourState {
     @Override
     public String toString() {
         return "NeighbourState{" +
-                "\nstate=" + state +
                 "\nmovementToState=" + movementToState +
                 "\nconflictedPositions=" + conflictedPositions +
                 "\n}";

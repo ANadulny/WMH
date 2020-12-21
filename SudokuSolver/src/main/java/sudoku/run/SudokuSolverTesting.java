@@ -15,7 +15,7 @@ public class SudokuSolverTesting {
         logger.info("/////////////////////////////////////////////////////////////////////////////");
         SudokuReader sudokuReader = new SudokuReader();
         Board testBoard = sudokuReader.readSudokuFromFile("easy", "tests",  "1.txt");
-        SudokuSolver solver = new SudokuSolver(testBoard, 100, 30, 0);
+        SudokuSolver solver = new SudokuSolver(testBoard, 1000, 20, 0);
         solver.solveSudoku();
 
     }

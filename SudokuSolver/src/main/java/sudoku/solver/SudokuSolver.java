@@ -28,6 +28,7 @@ public class SudokuSolver {
     public Board solveSudoku(){
         this.board.fillZeroesWithNumbers();
         int iterator = 0;
+        final int NUMBER_DIFF = 4;
         while (iterator < maxIterations && this.board.calculateNumberOfConflictedPosition() != 0) {
             logger.info("Iteration [" + (iterator + 1) + "]");
             logger.info("Generating movements:");
@@ -65,9 +66,9 @@ public class SudokuSolver {
                     int bestTabuConflictPositions = bestTabuNeighbourState != null ? bestTabuNeighbourState.getConflictedPositions() : Integer.MAX_VALUE;
                     int bestNonTabuConfilctsPositions = neighbours.get(i).getConflictedPositions();
                     logger.info("Tabu conflict positions = " + bestTabuConflictPositions + "; Non tabu conflict positions = " + bestNonTabuConfilctsPositions);
-                    if (bestTabuConflictPositions > bestNonTabuConfilctsPositions) {
-                        this.board = neighbours.get(0).getState();
-                        tabuList.addElement(neighbours.get(0));
+                    if (bestTabuConflictPositions > bestNonTabuConfilctsPositions - NUMBER_DIFF) {
+                        this.board = neighbours.get(i).getState();
+                        tabuList.addElement(neighbours.get(i));
                     } else {
                         this.board = bestTabuNeighbourState.getState();
                         // TODO update bestTabuNeighbourState position in tabu?
