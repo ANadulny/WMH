@@ -1,7 +1,6 @@
 package sudoku.solver;
 
 import dao.*;
-import javafx.util.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,23 +27,62 @@ public class SudokuSolver {
 
     public Board solveSudoku(){
         this.board.fillZeroesWithNumbers();
-        for(int i = 0; i < maxIterations; i++){
+        int iterator = 0;
+        final int NUMBER_DIFF = 4;
+        while (iterator < maxIterations && this.board.calculateNumberOfConflictedPosition() != 0) {
+            System.out.println(iterator);
+            logger.info("Iteration [" + (iterator + 1) + "]");
+            logger.info("Generating movements:");
             List<Movement> movementList = this.board.generateAllMovements();
-            logger.info("Movements for iteration " + (i + 1));
             logger.info(movementList.toString());
-            List<Pair<Board, Integer>> neighbours = new ArrayList<>();
+            List<NeighbourState> neighbours = new ArrayList<>();
+            logger.info("Searching neighbours:");
             for(Movement movement : movementList){
                 Cell[][] cells = Arrays.stream(this.board.getBoard()).map(Cell[]::clone).toArray(Cell[][]::new);
                 Board board = new Board(cells).executeMovement(movement);
-                Integer conflictedPositions = board.calculateNumberOfConflictedPosition();
-                neighbours.add(new Pair<>(board, conflictedPositions));
+                neighbours.add(new NeighbourState(board, board.calculateNumberOfConflictedPosition()));
             }
-            neighbours.sort(Comparator.comparingInt(Pair::getValue));
-            if (neighbours.size() > 0) {
-                logger.info("Neighbour on first position");
-                logger.info(neighbours.get(0).toString());
+
+            neighbours.sort(Comparator.comparingInt(NeighbourState::getConflictedPositions));
+            if (neighbours.size() <= 0) {
+                logger.error("Neighbour list size is <= 0");
+                return this.board;
             }
-        }
+
+            int i = 0;
+            boolean isFoundFollowingBoard = false;
+            NeighbourState bestTabuNeighbourState = null;
+            // TODO add second condition
+            while (i < neighbours.size() && !isFoundFollowingBoard) {
+                logger.info("Neighbour on position: [" + i + "]");
+                logger.info(neighbours.get(i).toString());
+                // TODO place to add memory list use
+                if (tabuList.hasNeighbourState(neighbours.get(i))) {
+                    if (bestTabuNeighbourState == null) {
+                        bestTabuNeighbourState = neighbours.get(i);
+                        logger.info("Setting best tabu neighbour state  for: " + bestTabuNeighbourState);
+                    }
+                } else {
+                    logger.info("Non tabu best neighbour state is: " + neighbours.get(i));
+                    int bestTabuConflictPositions = bestTabuNeighbourState != null ? bestTabuNeighbourState.getConflictedPositions() : Integer.MAX_VALUE;
+                    int bestNonTabuConfilctsPositions = neighbours.get(i).getConflictedPositions();
+                    logger.info("Tabu conflict positions = " + bestTabuConflictPositions + "; Non tabu conflict positions = " + bestNonTabuConfilctsPositions);
+                    if (bestTabuConflictPositions > bestNonTabuConfilctsPositions - NUMBER_DIFF) {
+                        this.board = neighbours.get(i).getState();
+                        tabuList.addElement(neighbours.get(i));
+                    } else {
+                        this.board = bestTabuNeighbourState.getState();
+                        // TODO update bestTabuNeighbourState position in tabu?
+                    }
+                    logger.info("Chosen board: " + this.board);
+                    isFoundFollowingBoard = true;
+                    continue;
+                }
+                i++;
+            } // end while loop
+            iterator++;
+        }  // end while loop
+        this.bestResult = this.board;
         return this.bestResult;
     }
 

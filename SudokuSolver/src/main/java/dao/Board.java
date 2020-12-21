@@ -47,7 +47,7 @@ public class Board {
     public void fillZeroesWithNumbers(){
         //x - 0-2,3-5,6-8       0-0, 1-3, 2-6
         //y - 0-2,3-5,6-8
-        Random rand = new Random();
+       Random rand = new Random();
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){
                 List<Integer> valuesForSubgrid = this.getValuesForSubgrid(i, j);
@@ -56,7 +56,7 @@ public class Board {
                         if(this.board[x][y].getValue() == 0){
                             int randomValuePosition = rand.nextInt(valuesForSubgrid.size());
                             insert(new Position(x, y), valuesForSubgrid.get(randomValuePosition));
-                            valuesForSubgrid.remove(randomValuePosition);
+                            valuesForSubgrid.remove(valuesForSubgrid.get(randomValuePosition));
                         }
                     }
                 }
@@ -125,5 +125,23 @@ public class Board {
             .map(Arrays::toString)
             .collect(Collectors.joining(System.lineSeparator()));
         return "Board:\n" + result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Board board1 = (Board) o;
+        for (int i = 0; i < board.length; i++) {
+            if (i >= board1.size() || !Arrays.equals(board[i], board1.board[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(board);
     }
 }
