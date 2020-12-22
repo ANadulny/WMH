@@ -9,7 +9,7 @@ import java.util.Queue;
 public class TabuList {
     private final int maxSize;
     private final Logger logger = LoggerFactory.getLogger(TabuList.class);
-    private Queue<NeighbourState> tabu;
+    private Queue<Board> tabu;
 
     public TabuList(int size) {
         this.maxSize = size;
@@ -20,11 +20,11 @@ public class TabuList {
         return maxSize;
     }
 
-    public Queue<NeighbourState> getTabu() {
+    public Queue<Board> getTabu() {
         return tabu;
     }
 
-    public void addElement(NeighbourState elem) {
+    public void addElement(Board elem) {
         if (maxSize <= 0) {
             return;
         }
@@ -39,9 +39,9 @@ public class TabuList {
         return tabu.size();
     }
 
-    public boolean hasNeighbourState(NeighbourState neighbourState) {
-        for (NeighbourState nState: tabu) {
-            if (nState.equals(neighbourState)) {
+    public boolean hasBoardState(Board board) {
+        for (Board b: tabu) {
+            if (b.equals(board)) {
                 return true;
             }
         }

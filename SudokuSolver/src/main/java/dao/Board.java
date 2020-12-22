@@ -7,9 +7,11 @@ import java.util.stream.Collectors;
 
 public class Board {
     private final Cell [][] board;
+    private int conflictedPositions;
 
     public Board(Cell [][] board) {
         this.board = board;
+        calculateNumberOfConflictedPosition();
     }
 
     public int size() {
@@ -96,7 +98,7 @@ public class Board {
         return movementsList;
     }
 
-    public int calculateNumberOfConflictedPosition(){
+    public void calculateNumberOfConflictedPosition(){
         int conflicts = 0;
         for(int i = 0; i < 9; i++){
             CellsList boarderCellsList = this.getColumn(i);
@@ -111,11 +113,19 @@ public class Board {
             int wrongPosisitions = 9 - differentElements;
             conflicts += wrongPosisitions;
         }
-        return conflicts;
+        conflictedPositions = conflicts;
     }
 
     private void insert(Position position, int value) {
         board[position.x][position.y].setValue(value);
+    }
+
+    public int getConflictedPositions() {
+        return conflictedPositions;
+    }
+
+    public void setConflictedPositions(int conflictedPositions) {
+        this.conflictedPositions = conflictedPositions;
     }
 
     @Override
@@ -124,7 +134,7 @@ public class Board {
             .stream(board)
             .map(Arrays::toString)
             .collect(Collectors.joining(System.lineSeparator()));
-        return "Board:\n" + result;
+        return "Board:\n" + result + "\nconflictedPositions: " + conflictedPositions;
     }
 
     @Override
