@@ -19,11 +19,11 @@ public class SudokuSolver {
     private Board board;
     private Board bestResult;
 
-    public SudokuSolver(Board board, int maxIterations, int tabuSize, int memSize, int aspirationCriterioNum){
+    public SudokuSolver(Board board, int maxIterations, int tabuSize, int memSize, int maxBoardFrequency, int aspirationCriterioNum){
         this.board = board;
         this.maxIterations = maxIterations;
         this.tabuList = new TabuList(tabuSize);
-        this.memoryList = new MemoryList(memSize);
+        this.memoryList = new MemoryList(memSize, maxBoardFrequency);
         this.aspirationCriterioNum = aspirationCriterioNum;
     }
 
@@ -54,12 +54,12 @@ public class SudokuSolver {
             int i = 0;
             boolean isFoundFollowingBoard = false;
             Board bestTabuState = null;
-            // TODO add second condition
             while (i < neighbours.size() && !isFoundFollowingBoard) {
                 logger.info("Neighbour on position: [" + i + "]");
                 logger.info(neighbours.get(i).toString());
-                // TODO place to add memory list use
-                if (tabuList.hasBoardState(neighbours.get(i))) {
+                if (!memoryList.isBoardFrequenciesOk(neighbours.get(i))) {
+                    logger.info("Memory list frequency is not ok");
+                } else if (tabuList.hasBoardState(neighbours.get(i))) {
                     if (bestTabuState == null) {
                         bestTabuState = neighbours.get(i);
                         logger.info("Setting best tabu neighbour state  for: " + bestTabuState);
@@ -69,17 +69,16 @@ public class SudokuSolver {
                     this.board = bestTabuState;
                     tabuList.updatePositionInTabu(bestTabuState);
                     isFoundFollowingBoard = true;
-                    continue;
                 } else {
                     logger.info("Non on tabu state conflict positions = " + neighbours.get(i).getConflictedPositions());
                     this.board = neighbours.get(i);
                     tabuList.addElement(neighbours.get(i));
                     isFoundFollowingBoard = true;
-                    continue;
                 }
                 i++;
             } // end while loop
             logger.info("Chosen board: " + this.board);
+            memoryList.addBoard(this.board);
             iterator++;
         }  // end while loop
         this.bestResult = this.board;

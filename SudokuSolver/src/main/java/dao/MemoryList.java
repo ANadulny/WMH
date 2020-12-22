@@ -1,31 +1,41 @@
 package dao;
 
-import javafx.util.Pair;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class MemoryList {
-    private final int size;
-    private List<Pair<Board, Integer>> boardFrequency;
-    private final int MAX_BOARD_FREQUENCY = 20;
+    private final int maxSize;
+    private final int maxBoardFrequency;
+    private final Logger logger = LoggerFactory.getLogger(MemoryList.class);
+    private Queue<Board> memory;
 
-    public MemoryList(int size) {
-        this.size = size;
-        this.boardFrequency = new ArrayList<>();
+    public MemoryList(int size, int maxBoardFrequency) {
+        this.maxSize = size;
+        this.maxBoardFrequency = maxBoardFrequency;
+        this.memory = new LinkedList<>();
     }
 
     public void addBoard(Board board) {
-        // TODO
-//        if (state in list) {
-//            update frequency with adding 1
-//        } else {
-//            stateFrequency.add(new Pair<>(state, 1));
-//        }
+        if (maxSize <= 0) {
+            return;
+        }
+        // remove elem from head
+        if (memory.size() >= maxSize) {
+            logger.info("Element removed from memory: " + memory.poll());
+        }
+        memory.add(board);
     }
 
     public boolean isBoardFrequenciesOk(Board board) {
-        // TODO check if frequency of given state is lower than MAX_BOARD_FREQUENCY
-        return true;
+        int counter = 0;
+        for (Board b: memory) {
+            if (b.equals(board)) {
+                counter++;
+            }
+        }
+        return counter <= maxBoardFrequency;
     }
 }

@@ -16,9 +16,12 @@ public class SudokuSolverTesting {
 
         SudokuReader sudokuReader = new SudokuReader();
         Board testBoard = sudokuReader.readSudokuFromFile("easy", "tests",  "1.txt");
-        SudokuSolver solver = new SudokuSolver(testBoard, 910, 200, 0, 4);
-//        SudokuSolver solver = new SudokuSolver(testBoard, 4000, 100, 0, 3);
-        solver.solveSudoku(false);
+//        SudokuSolver solver = new SudokuSolver(testBoard, 910, 200, 0, 20, 4); // will give solve result in 905 iteration step
+//        solver.solveSudoku(false);
 
+        SudokuSolver solver = new SudokuSolver(testBoard, 3500, 100, 2000, 5, 4);
+        solver.solveSudoku(false);
+        System.out.println("Best result");
+        System.out.println(solver.getBestResult().toString());
     }
 }
