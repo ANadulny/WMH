@@ -48,6 +48,14 @@ public class TabuList {
         return false;
     }
 
+    public void updatePositionInTabu(Board board) {
+        if (maxSize <= 0) {
+            return;
+        }
+        logger.info("Position updated in tabu for: " + tabu.remove(board));
+        tabu.add(board);
+    }
+
     @Override
     public String toString() {
         return "TabuList{\n" +

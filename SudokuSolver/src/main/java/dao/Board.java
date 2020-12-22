@@ -46,7 +46,7 @@ public class Board {
         return new CellsList(numbers);
     }
 
-    public void fillZeroesWithNumbers(){
+    public void fillZeroesWithNumbers(boolean fillBoardWithRandomNumbers){
         //x - 0-2,3-5,6-8       0-0, 1-3, 2-6
         //y - 0-2,3-5,6-8
        Random rand = new Random();
@@ -56,9 +56,12 @@ public class Board {
                 for(int x = i * 3; x < (i + 1) * 3; x++){
                     for(int y = j * 3; y < (j + 1) * 3; y++){
                         if(this.board[x][y].getValue() == 0){
-                            int randomValuePosition = rand.nextInt(valuesForSubgrid.size());
-                            insert(new Position(x, y), valuesForSubgrid.get(randomValuePosition));
-                            valuesForSubgrid.remove(valuesForSubgrid.get(randomValuePosition));
+                            int positionValue = 0;
+                            if (fillBoardWithRandomNumbers) {
+                                positionValue = rand.nextInt(valuesForSubgrid.size());
+                            }
+                            insert(new Position(x, y), valuesForSubgrid.get(positionValue));
+                            valuesForSubgrid.remove(valuesForSubgrid.get(positionValue));
                         }
                     }
                 }
