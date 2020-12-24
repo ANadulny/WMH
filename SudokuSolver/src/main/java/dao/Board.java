@@ -7,9 +7,11 @@ import java.util.stream.Collectors;
 
 public class Board {
     private final Cell [][] board;
+    private int conflictedPositions;
 
     public Board(Cell [][] board) {
         this.board = board;
+        calculateNumberOfConflictedPosition();
     }
 
     public int size() {
@@ -44,7 +46,7 @@ public class Board {
         return new CellsList(numbers);
     }
 
-    public void fillZeroesWithNumbers(){
+    public void fillZeroesWithNumbers(boolean fillBoardWithRandomNumbers){
         //x - 0-2,3-5,6-8       0-0, 1-3, 2-6
         //y - 0-2,3-5,6-8
        Random rand = new Random();
@@ -54,9 +56,12 @@ public class Board {
                 for(int x = i * 3; x < (i + 1) * 3; x++){
                     for(int y = j * 3; y < (j + 1) * 3; y++){
                         if(this.board[x][y].getValue() == 0){
-                            int randomValuePosition = rand.nextInt(valuesForSubgrid.size());
-                            insert(new Position(x, y), valuesForSubgrid.get(randomValuePosition));
-                            valuesForSubgrid.remove(valuesForSubgrid.get(randomValuePosition));
+                            int positionValue = 0;
+                            if (fillBoardWithRandomNumbers) {
+                                positionValue = rand.nextInt(valuesForSubgrid.size());
+                            }
+                            insert(new Position(x, y), valuesForSubgrid.get(positionValue));
+                            valuesForSubgrid.remove(valuesForSubgrid.get(positionValue));
                         }
                     }
                 }
@@ -96,7 +101,7 @@ public class Board {
         return movementsList;
     }
 
-    public int calculateNumberOfConflictedPosition(){
+    public void calculateNumberOfConflictedPosition(){
         int conflicts = 0;
         for(int i = 0; i < 9; i++){
             CellsList boarderCellsList = this.getColumn(i);
@@ -111,11 +116,19 @@ public class Board {
             int wrongPosisitions = 9 - differentElements;
             conflicts += wrongPosisitions;
         }
-        return conflicts;
+        conflictedPositions = conflicts;
     }
 
     private void insert(Position position, int value) {
         board[position.x][position.y].setValue(value);
+    }
+
+    public int getConflictedPositions() {
+        return conflictedPositions;
+    }
+
+    public void setConflictedPositions(int conflictedPositions) {
+        this.conflictedPositions = conflictedPositions;
     }
 
     @Override
@@ -124,7 +137,7 @@ public class Board {
             .stream(board)
             .map(Arrays::toString)
             .collect(Collectors.joining(System.lineSeparator()));
-        return "Board:\n" + result;
+        return "Board:\n" + result + "\nconflictedPositions: " + conflictedPositions;
     }
 
     @Override

@@ -21,8 +21,8 @@ public class Main {
         String level = sc.nextLine();
         if (level.equals("easy") || level.equals("middle") || level.equals("hard")) {
             Board testBoard = sudokuReader.readSudokuFromFile(level, "tests",  "1.txt");
-            SudokuSolver solver = new SudokuSolver(testBoard, 20000, 50, 0);
-            solver.solveSudoku();
+            SudokuSolver solver = new SudokuSolver(testBoard, 5000, 100, 500, 20,3);
+            solver.solveSudoku(true);
             if (solver.getBestResult() != null) {
                 logger.info("Best result");
                 logger.info(solver.getBestResult().toString());

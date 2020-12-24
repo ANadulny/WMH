@@ -13,10 +13,15 @@ public class SudokuSolverTesting {
     public static void main(String[] args) {
         logger.info("SudokuSolverTesting");
         logger.info("/////////////////////////////////////////////////////////////////////////////");
+
         SudokuReader sudokuReader = new SudokuReader();
         Board testBoard = sudokuReader.readSudokuFromFile("easy", "tests",  "1.txt");
-        SudokuSolver solver = new SudokuSolver(testBoard, 5000, 200, 0);
-        solver.solveSudoku();
+//        SudokuSolver solver = new SudokuSolver(testBoard, 910, 200, 0, 20, 4); // will give solve result in 905 iteration step
+//        solver.solveSudoku(false);
 
+        SudokuSolver solver = new SudokuSolver(testBoard, 3500, 100, 2000, 5, 4);
+        solver.solveSudoku(false);
+        System.out.println("Best result");
+        System.out.println(solver.getBestResult().toString());
     }
 }

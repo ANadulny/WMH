@@ -14,36 +14,38 @@ public class SudokuSolver {
     private final Logger logger = LoggerFactory.getLogger(SudokuSolver.class);
     private final TabuList tabuList;
     private final MemoryList memoryList;
+    private final int aspirationCriterioNum;
 
     private Board board;
     private Board bestResult;
 
-    public SudokuSolver(Board board, int maxIterations, int tabuSize, int memSize){
+    public SudokuSolver(Board board, int maxIterations, int tabuSize, int memSize, int maxBoardFrequency, int aspirationCriterioNum){
         this.board = board;
         this.maxIterations = maxIterations;
         this.tabuList = new TabuList(tabuSize);
-        this.memoryList = new MemoryList(memSize);
+        this.memoryList = new MemoryList(memSize, maxBoardFrequency);
+        this.aspirationCriterioNum = aspirationCriterioNum;
     }
 
-    public Board solveSudoku(){
-        this.board.fillZeroesWithNumbers();
+    public Board solveSudoku(boolean fillBoardWithRandomNumbers){
+        this.board.fillZeroesWithNumbers(fillBoardWithRandomNumbers);
         int iterator = 0;
-        final int NUMBER_DIFF = 4;
-        while (iterator < maxIterations && this.board.calculateNumberOfConflictedPosition() != 0) {
+        while (iterator < maxIterations && this.board.getConflictedPositions() != 0) {
             System.out.println(iterator);
             logger.info("Iteration [" + (iterator + 1) + "]");
             logger.info("Generating movements:");
             List<Movement> movementList = this.board.generateAllMovements();
             logger.info(movementList.toString());
-            List<NeighbourState> neighbours = new ArrayList<>();
+            List<Board> neighbours = new ArrayList<>();
             logger.info("Searching neighbours:");
             for(Movement movement : movementList){
                 Cell[][] cells = Arrays.stream(this.board.getBoard()).map(Cell[]::clone).toArray(Cell[][]::new);
                 Board board = new Board(cells).executeMovement(movement);
-                neighbours.add(new NeighbourState(board, board.calculateNumberOfConflictedPosition()));
+                board.calculateNumberOfConflictedPosition();
+                neighbours.add(board);
             }
 
-            neighbours.sort(Comparator.comparingInt(NeighbourState::getConflictedPositions));
+            neighbours.sort(Comparator.comparingInt(Board::getConflictedPositions));
             if (neighbours.size() <= 0) {
                 logger.error("Neighbour list size is <= 0");
                 return this.board;
@@ -51,35 +53,32 @@ public class SudokuSolver {
 
             int i = 0;
             boolean isFoundFollowingBoard = false;
-            NeighbourState bestTabuNeighbourState = null;
-            // TODO add second condition
+            Board bestTabuState = null;
             while (i < neighbours.size() && !isFoundFollowingBoard) {
                 logger.info("Neighbour on position: [" + i + "]");
                 logger.info(neighbours.get(i).toString());
-                // TODO place to add memory list use
-                if (tabuList.hasNeighbourState(neighbours.get(i))) {
-                    if (bestTabuNeighbourState == null) {
-                        bestTabuNeighbourState = neighbours.get(i);
-                        logger.info("Setting best tabu neighbour state  for: " + bestTabuNeighbourState);
+                if (!memoryList.isBoardFrequenciesOk(neighbours.get(i))) {
+                    logger.info("Memory list frequency is not ok");
+                } else if (tabuList.hasBoardState(neighbours.get(i))) {
+                    if (bestTabuState == null) {
+                        bestTabuState = neighbours.get(i);
+                        logger.info("Setting best tabu neighbour state  for: " + bestTabuState);
                     }
-                } else {
-                    logger.info("Non tabu best neighbour state is: " + neighbours.get(i));
-                    int bestTabuConflictPositions = bestTabuNeighbourState != null ? bestTabuNeighbourState.getConflictedPositions() : Integer.MAX_VALUE;
-                    int bestNonTabuConfilctsPositions = neighbours.get(i).getConflictedPositions();
-                    logger.info("Tabu conflict positions = " + bestTabuConflictPositions + "; Non tabu conflict positions = " + bestNonTabuConfilctsPositions);
-                    if (bestTabuConflictPositions > bestNonTabuConfilctsPositions - NUMBER_DIFF) {
-                        this.board = neighbours.get(i).getState();
-                        tabuList.addElement(neighbours.get(i));
-                    } else {
-                        this.board = bestTabuNeighbourState.getState();
-                        // TODO update bestTabuNeighbourState position in tabu?
-                    }
-                    logger.info("Chosen board: " + this.board);
+                } else if (bestTabuState != null && isAspirationCriterionFulfilled(bestTabuState.getConflictedPositions(), neighbours.get(i).getConflictedPositions())) {
+                    logger.info("Tabu conflict positions = " + bestTabuState.getConflictedPositions() + "; Non tabu conflict positions = " + neighbours.get(i).getConflictedPositions());
+                    this.board = bestTabuState;
+                    tabuList.updatePositionInTabu(bestTabuState);
                     isFoundFollowingBoard = true;
-                    continue;
+                } else {
+                    logger.info("Non on tabu state conflict positions = " + neighbours.get(i).getConflictedPositions());
+                    this.board = neighbours.get(i);
+                    tabuList.addElement(neighbours.get(i));
+                    isFoundFollowingBoard = true;
                 }
                 i++;
             } // end while loop
+            logger.info("Chosen board: " + this.board);
+            memoryList.addBoard(this.board);
             iterator++;
         }  // end while loop
         this.bestResult = this.board;
@@ -88,5 +87,9 @@ public class SudokuSolver {
 
     public Board getBestResult() {
         return bestResult;
+    }
+
+    private boolean isAspirationCriterionFulfilled(int tabuConflictedPositions, int neighbourConflictedPositions) {
+        return tabuConflictedPositions <= neighbourConflictedPositions - aspirationCriterioNum;
     }
 }
