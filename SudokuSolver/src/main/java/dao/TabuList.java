@@ -30,7 +30,8 @@ public class TabuList {
         }
         // remove elem from head
         if (tabu.size() >= maxSize) {
-            logger.info("Element removed from tabu: " + tabu.poll());
+            tabu.poll();
+//            logger.info("Element removed from tabu: " + tabu.poll());
         }
         tabu.add(elem);
     }
@@ -52,7 +53,8 @@ public class TabuList {
         if (maxSize <= 0) {
             return;
         }
-        logger.info("Position updated in tabu for: " + tabu.remove(board));
+        tabu.remove(board);
+//        logger.info("Position updated in tabu for: " + tabu.remove(board));
         tabu.add(board);
     }
 
