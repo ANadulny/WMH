@@ -28,6 +28,9 @@ class SudokuSolverThread extends Thread {
         int maxBoardFrequency = 30;
         int maxAspirationCriterion = 5;
         List<String> levels = Arrays.asList("easy", "middle", "hard");
+        int maxIteration = ((maxTabuSize - 20) / 15) * 30 * 5;
+        logger.info("Max iteration = " + maxIteration);
+        int iterator = 1;
         for (int j = 20; j <= maxTabuSize; j = j + 15) {
             for (int k = 5; k <= maxBoardFrequency; k = k + 5) {
                 for (int l = 1; l <= maxAspirationCriterion; l++) {
@@ -55,16 +58,13 @@ class SudokuSolverThread extends Thread {
 //                                }
                     }
 //                        }
-                    logger.info("/////RESULTS FOR PARAMETERS///////");
-                    logger.info("mem size = " + memSize + "; tabu size = " + j + "; board frequency = " + k + "; aspiration criterion = " + l);
                     if (tabuSolved <= 3) {
-                        logger.info(String.valueOf(tabuSolved));
+                        logger.info("Iteration todo = " + (maxIteration - iterator) + " RESULT = " + String.valueOf(tabuSolved) + " mem size = " + memSize + "; tabu size = " + j + "; board frequency = " + k + "; aspiration criterion = " + l);
                     } else if (tabuSolved <= 4) {
-                        logger.warn(String.valueOf(tabuSolved));
+                        logger.warn("Iteration todo = " + (maxIteration - iterator) + " RESULT = " + String.valueOf(tabuSolved) + " mem size = " + memSize + "; tabu size = " + j + "; board frequency = " + k + "; aspiration criterion = " + l);
                     } else {
-                        logger.error(String.valueOf(tabuSolved));
+                        logger.error("Iteration todo = " + (maxIteration - iterator) + " RESULT = " + String.valueOf(tabuSolved) + " mem size = " + memSize + "; tabu size = " + j + "; board frequency = " + k + "; aspiration criterion = " + l);
                     }
-                    logger.info("//////////////////////////////////////////////////////////");
                 }
             }
         }
