@@ -31,13 +31,13 @@ public class SudokuSolver {
         this.board.fillZeroesWithNumbers(fillBoardWithRandomNumbers);
         int iterator = 0;
         while (iterator < maxIterations && this.board.getConflictedPositions() != 0) {
-            System.out.println(iterator);
-            logger.info("Iteration [" + (iterator + 1) + "]");
-            logger.info("Generating movements:");
+//            System.out.println(iterator);
+//            logger.info("Iteration [" + (iterator + 1) + "]");
+//            logger.info("Generating movements:");
             List<Movement> movementList = this.board.generateAllMovements();
-            logger.info(movementList.toString());
+//            logger.info(movementList.toString());
             List<Board> neighbours = new ArrayList<>();
-            logger.info("Searching neighbours:");
+//            logger.info("Searching neighbours:");
             for(Movement movement : movementList){
                 Cell[][] cells = Arrays.stream(this.board.getBoard()).map(Cell[]::clone).toArray(Cell[][]::new);
                 Board board = new Board(cells).executeMovement(movement);
@@ -55,33 +55,34 @@ public class SudokuSolver {
             boolean isFoundFollowingBoard = false;
             Board bestTabuState = null;
             while (i < neighbours.size() && !isFoundFollowingBoard) {
-                logger.info("Neighbour on position: [" + i + "]");
-                logger.info(neighbours.get(i).toString());
+//                logger.info("Neighbour on position: [" + i + "]");
+//                logger.info(neighbours.get(i).toString());
                 if (!memoryList.isBoardFrequenciesOk(neighbours.get(i))) {
-                    logger.info("Memory list frequency is not ok");
+//                    logger.info("Memory list frequency is not ok");
                 } else if (tabuList.hasBoardState(neighbours.get(i))) {
                     if (bestTabuState == null) {
                         bestTabuState = neighbours.get(i);
-                        logger.info("Setting best tabu neighbour state  for: " + bestTabuState);
+//                        logger.info("Setting best tabu neighbour state  for: " + bestTabuState);
                     }
                 } else if (bestTabuState != null && isAspirationCriterionFulfilled(bestTabuState.getConflictedPositions(), neighbours.get(i).getConflictedPositions())) {
-                    logger.info("Tabu conflict positions = " + bestTabuState.getConflictedPositions() + "; Non tabu conflict positions = " + neighbours.get(i).getConflictedPositions());
+//                    logger.info("Tabu conflict positions = " + bestTabuState.getConflictedPositions() + "; Non tabu conflict positions = " + neighbours.get(i).getConflictedPositions());
                     this.board = bestTabuState;
                     tabuList.updatePositionInTabu(bestTabuState);
                     isFoundFollowingBoard = true;
                 } else {
-                    logger.info("Non on tabu state conflict positions = " + neighbours.get(i).getConflictedPositions());
+//                    logger.info("Non on tabu state conflict positions = " + neighbours.get(i).getConflictedPositions());
                     this.board = neighbours.get(i);
                     tabuList.addElement(neighbours.get(i));
                     isFoundFollowingBoard = true;
                 }
                 i++;
             } // end while loop
-            logger.info("Chosen board: " + this.board);
+//            logger.info("Chosen board: " + this.board);
             memoryList.addBoard(this.board);
             iterator++;
         }  // end while loop
         this.bestResult = this.board;
+//        logger.info("Ending iteration: " + iterator);
         return this.bestResult;
     }
 

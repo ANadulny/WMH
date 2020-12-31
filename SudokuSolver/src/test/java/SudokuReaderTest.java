@@ -1,7 +1,7 @@
 import dao.Board;
 import dao.CellsList;
-import dao.Cell;
 import org.testng.annotations.Test;
+import sudoku.helper.Helper;
 import sudoku.reader.SudokuReader;
 
 import java.util.Arrays;
@@ -51,27 +51,12 @@ public class SudokuReaderTest {
                 Board testBoard = sudokuReader.readSudokuFromFile(level, "tests", i + ".txt");
                 Board solutionBoard = sudokuReader.readSudokuFromFile(level, "solutions", i + ".txt");
                 for (int j = 0; j < 9; j++) {
-                    if (!hasCorrectNumberPosition(testBoard.getRow(j), solutionBoard.getRow(j)) ||
-                            !hasCorrectNumberPosition(testBoard.getColumn(j), solutionBoard.getColumn(j))) {
+                    if (!Helper.hasCorrectNumberPosition(testBoard.getRow(j), solutionBoard.getRow(j)) ||
+                            !Helper.hasCorrectNumberPosition(testBoard.getColumn(j), solutionBoard.getColumn(j))) {
                         fail("Sudoku on level " + level + " from file " + i + ".txt has different positions numbers in testing data and in solution.");
                     }
                 }
             }
         }
-    }
-
-    private boolean hasCorrectNumberPosition(CellsList testList, CellsList solutionList) {
-        List<Cell> test = testList.getCells();
-        List<Cell> solution = solutionList.getCells();
-        if (test.size() != solution.size()) {
-            return false;
-        }
-
-        for(int i = 0; i < test.size(); i++) {
-            if (test.get(i).getValue() != 0 && test.get(i).getValue() != solution.get(i).getValue()) {
-                return false;
-            }
-        }
-        return true;
     }
 }

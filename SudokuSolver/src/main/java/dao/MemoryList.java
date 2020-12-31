@@ -24,7 +24,8 @@ public class MemoryList {
         }
         // remove elem from head
         if (memory.size() >= maxSize) {
-            logger.info("Element removed from memory: " + memory.poll());
+            memory.poll();
+//            logger.info("Element removed from memory: " + memory.poll());
         }
         memory.add(board);
     }
