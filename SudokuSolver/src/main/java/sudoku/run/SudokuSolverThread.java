@@ -34,15 +34,15 @@ class SudokuSolverThread extends Thread {
         for (int j = 20; j <= maxTabuSize; j = j + 15) {
             for (int k = 5; k <= maxBoardFrequency; k = k + 5) {
                 for (int l = 1; l <= maxAspirationCriterion; l++) {
-                    int tabuSolved = 0;
+                    int sudokuSolved = 0;
 //                        for (String level: levels) {
                     for (int m = 1; m <= 5; m++) {
                         Board testBoard = sudokuReader.readSudokuFromFile("middle", "tests", m + ".txt");
-                        SudokuSolver solver = new SudokuSolver(testBoard, maxIterations, 100, 2000, 5, 4);
+                        SudokuSolver solver = new SudokuSolver(testBoard, maxIterations, j, memSize, k, l);
                         solver.solveSudoku(false);
 //                                logger.info("Best result");
-                        if (testBoard.getConflictedPositions() == 0) {
-                            tabuSolved++;
+                        if (solver.getBestResult().getConflictedPositions() == 0) {
+                            sudokuSolved++;
 //                                    logger.info(solver.getBestResult().toString());
                         } else {
 //                                    logger.warn("Sudoku was not solved! Conflicts positions: " + solver.getBestResult().getConflictedPositions());
@@ -58,13 +58,14 @@ class SudokuSolverThread extends Thread {
 //                                }
                     }
 //                        }
-                    if (tabuSolved <= 3) {
-                        logger.info("Iteration todo = " + (maxIteration - iterator) + " RESULT = " + String.valueOf(tabuSolved) + " mem size = " + memSize + "; tabu size = " + j + "; board frequency = " + k + "; aspiration criterion = " + l);
-                    } else if (tabuSolved <= 4) {
-                        logger.warn("Iteration todo = " + (maxIteration - iterator) + " RESULT = " + String.valueOf(tabuSolved) + " mem size = " + memSize + "; tabu size = " + j + "; board frequency = " + k + "; aspiration criterion = " + l);
+                    if (sudokuSolved <= 3) {
+                        logger.info("Iteration todo = " + (maxIteration - iterator) + " RESULT = " + String.valueOf(sudokuSolved) + " mem size = " + memSize + "; tabu size = " + j + "; board frequency = " + k + "; aspiration criterion = " + l);
+                    } else if (sudokuSolved <= 4) {
+                        logger.warn("Iteration todo = " + (maxIteration - iterator) + " RESULT = " + String.valueOf(sudokuSolved) + " mem size = " + memSize + "; tabu size = " + j + "; board frequency = " + k + "; aspiration criterion = " + l);
                     } else {
-                        logger.error("Iteration todo = " + (maxIteration - iterator) + " RESULT = " + String.valueOf(tabuSolved) + " mem size = " + memSize + "; tabu size = " + j + "; board frequency = " + k + "; aspiration criterion = " + l);
+                        logger.error("Iteration todo = " + (maxIteration - iterator) + " RESULT = " + String.valueOf(sudokuSolved) + " mem size = " + memSize + "; tabu size = " + j + "; board frequency = " + k + "; aspiration criterion = " + l);
                     }
+                    iterator++;
                 }
             }
         }
@@ -77,16 +78,5 @@ class SudokuSolverThread extends Thread {
             t = new Thread (this, String.valueOf(memSize));
             t.start ();
         }
-    }
-}
-
-// TODO remove
-class TestThread {
-    public static void main(String args[]) {
-        SudokuSolverThread T1 = new SudokuSolverThread( 200);
-        T1.start();
-
-        SudokuSolverThread T2 = new SudokuSolverThread( 300);
-        T2.start();
     }
 }
