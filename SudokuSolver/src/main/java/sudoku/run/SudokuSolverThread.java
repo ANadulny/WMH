@@ -17,13 +17,13 @@ class SudokuSolverThread extends Thread {
     private static final Logger logger = LoggerFactory.getLogger(SudokuSolverThread.class);
     private static final int maxIterations = 9000;
 
-    private static final int minTabuSize = 170;
+    private static final int minTabuSize = 140;
     private static final int minBoardFrequency = 2;
     private static final int minAspirationCriterion = 1;
 
-    private static final int maxTabuSize = 200;
-    private static final int maxBoardFrequency = 7;
-    private static final int maxAspirationCriterion = 1;
+    private static final int maxTabuSize = 250;
+    private static final int maxBoardFrequency = 8;
+    private static final int maxAspirationCriterion = 4;
 
     SudokuSolverThread( int memSize) {
         this.memSize = memSize;
@@ -35,8 +35,8 @@ class SudokuSolverThread extends Thread {
         logger.info("Running thread with mem size: " +  memSize);
         List<String> levels = Arrays.asList("easy", "middle", "hard");
         int iterator = 1;
-        for (int tabuSize = minTabuSize; tabuSize <= maxTabuSize; tabuSize += 5) {
-            for (int boardFrequency = minBoardFrequency; boardFrequency <= maxBoardFrequency; boardFrequency += 2) {
+        for (int tabuSize = minTabuSize; tabuSize <= maxTabuSize; tabuSize += 10) {
+            for (int boardFrequency = minBoardFrequency; boardFrequency <= maxBoardFrequency; boardFrequency++) {
                 for (int aspirationCriterion = minAspirationCriterion; aspirationCriterion <= maxAspirationCriterion; aspirationCriterion++) {
                     for (String level: levels) {
                         solveAllSudokuWithGivenLevel(iterator, level, tabuSize, boardFrequency, aspirationCriterion);
@@ -51,6 +51,8 @@ class SudokuSolverThread extends Thread {
     private void solveAllSudokuWithGivenLevel(int iterator, String level, int tabuSize, int boardFrequency, int aspirationCriterion) {
         int sudokuSolved = 0;
         List<Integer> solvedSudokuNumbers = new ArrayList<>();
+        List<Integer> doesNotsolvedSudokuNumbers = new ArrayList<>();
+
         for (int m = 1; m <= 15; m++) {
             Board testBoard = sudokuReader.readSudokuFromFile(level, "tests", m + ".txt");
             SudokuSolver solver = new SudokuSolver(testBoard, maxIterations, tabuSize, memSize, boardFrequency, aspirationCriterion);
@@ -58,6 +60,8 @@ class SudokuSolverThread extends Thread {
             if (solver.getBestResult().getConflictedPositions() == 0) {
                 sudokuSolved++;
                 solvedSudokuNumbers.add(m);
+            } else {
+                doesNotsolvedSudokuNumbers.add(m);
             }
 
             if (m > 8 && sudokuSolved < 3) {
@@ -65,7 +69,8 @@ class SudokuSolverThread extends Thread {
             }
         }
         String logMessage = "Iteration = " + iterator + " LEVEL " + level + " RESULT = " + sudokuSolved + " mem size = " + memSize + "; tabu size = " + tabuSize +
-                "; board frequency = " + boardFrequency + "; aspiration criterion = " + aspirationCriterion + "\nSolved Sudoku" + solvedSudokuNumbers.toString();
+                "; board frequency = " + boardFrequency + "; aspiration criterion = " + aspirationCriterion + "\nSolved Sudoku " + solvedSudokuNumbers.toString() +
+                "\nSudoku does not solved " + doesNotsolvedSudokuNumbers.toString();
 
         if (sudokuSolved >= 12) {
             logger.error(logMessage);
