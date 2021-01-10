@@ -1,0 +1,470 @@
+17:54:54.737 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+17:54:54.739 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+17:54:54.749 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 1750
+17:54:54.749 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 1750
+17:54:54.749 [1750] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 1750
+17:54:54.749 [1750] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+17:55:32.150 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 8 mem size = 1750; tabu size = 155; board frequency = 5; aspiration criterion = 1
+17:56:03.860 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 6 mem size = 1750; tabu size = 155; board frequency = 5; aspiration criterion = 2
+17:56:41.959 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 5 mem size = 1750; tabu size = 155; board frequency = 5; aspiration criterion = 3
+17:57:26.180 [1750] INFO  sudoku.run.SudokuSolverThread - Iteration todo = 1796 RESULT = 3 mem size = 1750; tabu size = 155; board frequency = 5; aspiration criterion = 4
+17:58:10.999 [1750] INFO  sudoku.run.SudokuSolverThread - Iteration todo = 1795 RESULT = 3 mem size = 1750; tabu size = 155; board frequency = 5; aspiration criterion = 5
+17:58:45.480 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1794 RESULT = 7 mem size = 1750; tabu size = 155; board frequency = 7; aspiration criterion = 1
+17:59:15.210 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1793 RESULT = 7 mem size = 1750; tabu size = 155; board frequency = 7; aspiration criterion = 2
+17:59:58.710 [1750] INFO  sudoku.run.SudokuSolverThread - Iteration todo = 1792 RESULT = 2 mem size = 1750; tabu size = 155; board frequency = 7; aspiration criterion = 3
+18:00:43.295 [1750] INFO  sudoku.run.SudokuSolverThread - Iteration todo = 1791 RESULT = 3 mem size = 1750; tabu size = 155; board frequency = 7; aspiration criterion = 4
+18:01:28.070 [1750] INFO  sudoku.run.SudokuSolverThread - Iteration todo = 1790 RESULT = 3 mem size = 1750; tabu size = 155; board frequency = 7; aspiration criterion = 5
+18:02:06.340 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1789 RESULT = 5 mem size = 1750; tabu size = 155; board frequency = 9; aspiration criterion = 1
+18:02:40.359 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1788 RESULT = 6 mem size = 1750; tabu size = 155; board frequency = 9; aspiration criterion = 2
+18:03:24.649 [1750] INFO  sudoku.run.SudokuSolverThread - Iteration todo = 1787 RESULT = 1 mem size = 1750; tabu size = 155; board frequency = 9; aspiration criterion = 3
+18:04:08.128 [1750] INFO  sudoku.run.SudokuSolverThread - Iteration todo = 1786 RESULT = 3 mem size = 1750; tabu size = 155; board frequency = 9; aspiration criterion = 4
+18:04:50.567 [1750] INFO  sudoku.run.SudokuSolverThread - Iteration todo = 1785 RESULT = 3 mem size = 1750; tabu size = 155; board frequency = 9; aspiration criterion = 5
+18:05:27.989 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1784 RESULT = 5 mem size = 1750; tabu size = 155; board frequency = 11; aspiration criterion = 1
+18:06:06.986 [1750] WARN  sudoku.run.SudokuSolverThread - Iteration todo = 1783 RESULT = 4 mem size = 1750; tabu size = 155; board frequency = 11; aspiration criterion = 2
+18:06:47.021 [1750] INFO  sudoku.run.SudokuSolverThread - Iteration todo = 1782 RESULT = 3 mem size = 1750; tabu size = 155; board frequency = 11; aspiration criterion = 3
+18:06:50.612 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:06:50.612 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:06:50.628 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 1750
+18:06:50.628 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 1750
+18:06:50.628 [1750] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 1750
+18:06:50.628 [1750] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+18:07:29.655 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 9 mem size = 1750; tabu size = 155; board frequency = 5; aspiration criterion = 1
+18:08:10.054 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 8 mem size = 1750; tabu size = 155; board frequency = 5; aspiration criterion = 2
+18:09:05.007 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 6 mem size = 1750; tabu size = 155; board frequency = 5; aspiration criterion = 3
+18:09:29.294 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:09:29.294 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:09:29.309 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 1750
+18:09:29.309 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 1750
+18:09:29.309 [1750] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 1750
+18:09:29.309 [1750] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+18:10:13.131 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 9 mem size = 1750; tabu size = 155; board frequency = 5; aspiration criterion = 1
+18:11:02.393 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 8 mem size = 1750; tabu size = 155; board frequency = 5; aspiration criterion = 2
+18:11:44.837 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:11:44.837 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:11:44.853 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 1750
+18:11:44.853 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 1750
+18:11:44.853 [1750] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 1750
+18:11:44.853 [1750] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+18:14:15.924 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 24 mem size = 1750; tabu size = 155; board frequency = 5; aspiration criterion = 1
+18:17:24.275 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 20 mem size = 1750; tabu size = 155; board frequency = 5; aspiration criterion = 2
+18:19:17.292 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:19:17.308 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:19:17.346 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 1750
+18:19:17.346 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 1750
+18:19:17.346 [1750] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 1750
+18:19:17.346 [1750] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+18:20:24.531 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:20:24.546 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:20:24.562 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 1750
+18:20:24.562 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 1750
+18:20:24.562 [1750] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 1750
+18:20:24.562 [1750] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+18:20:50.252 [1750] WARN  sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 4 mem size = 1750; tabu size = 155; board frequency = 5; aspiration criterion = 1
+18:21:31.143 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:21:31.143 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:21:31.159 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 1750
+18:21:31.159 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 1750
+18:21:31.159 [1750] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 1750
+18:21:31.159 [1750] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+18:22:14.936 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:22:14.951 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:22:14.967 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 1750
+18:22:14.967 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 1750
+18:22:14.967 [1750] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 1750
+18:22:14.967 [1750] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+18:25:36.517 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:25:36.517 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:28:47.870 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:28:47.885 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:29:22.782 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:29:22.788 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:30:34.418 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:30:34.418 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:32:59.428 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:32:59.444 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:34:04.669 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:34:04.669 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:36:35.453 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:36:35.453 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:36:35.484 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2750
+18:36:35.484 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2750
+18:36:35.484 [2750] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2750
+18:36:35.484 [2750] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+18:37:43.796 [2750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 13 mem size = 2750; tabu size = 155; board frequency = 5; aspiration criterion = 1
+18:39:18.675 [2750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 11 mem size = 2750; tabu size = 155; board frequency = 5; aspiration criterion = 2
+18:41:33.947 [2750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 7 mem size = 2750; tabu size = 155; board frequency = 5; aspiration criterion = 3
+18:43:51.759 [2750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1796 RESULT = 8 mem size = 2750; tabu size = 155; board frequency = 5; aspiration criterion = 4
+18:46:00.861 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:46:00.861 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:47:46.871 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:47:46.886 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:48:03.323 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:48:03.323 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:48:34.558 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:48:34.558 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:48:40.859 [main] INFO  sudoku.run.SudokuSolverTesting - Result conf positions:0
+18:48:40.874 [main] INFO  sudoku.run.SudokuSolverTesting - Board:
+[4, 6, 5, 3, 8, 2, 9, 7, 1]
+[9, 7, 2, 6, 4, 1, 8, 3, 5]
+[8, 3, 1, 9, 5, 7, 6, 4, 2]
+[5, 4, 8, 1, 9, 6, 7, 2, 3]
+[7, 9, 6, 2, 3, 5, 4, 1, 8]
+[1, 2, 3, 8, 7, 4, 5, 9, 6]
+[2, 5, 9, 4, 6, 3, 1, 8, 7]
+[6, 1, 4, 7, 2, 8, 3, 5, 9]
+[3, 8, 7, 5, 1, 9, 2, 6, 4]
+conflictedPositions: 0
+18:48:40.874 [main] INFO  sudoku.run.SudokuSolverTesting - Last iteration: 4534
+18:48:56.259 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:48:56.259 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:49:02.629 [main] INFO  sudoku.run.SudokuSolverTesting - Result conf positions:0
+18:49:02.629 [main] INFO  sudoku.run.SudokuSolverTesting - Board:
+[4, 6, 5, 3, 8, 2, 9, 7, 1]
+[9, 7, 2, 6, 4, 1, 8, 3, 5]
+[8, 3, 1, 9, 5, 7, 6, 4, 2]
+[5, 4, 8, 1, 9, 6, 7, 2, 3]
+[7, 9, 6, 2, 3, 5, 4, 1, 8]
+[1, 2, 3, 8, 7, 4, 5, 9, 6]
+[2, 5, 9, 4, 6, 3, 1, 8, 7]
+[6, 1, 4, 7, 2, 8, 3, 5, 9]
+[3, 8, 7, 5, 1, 9, 2, 6, 4]
+conflictedPositions: 0
+18:49:02.629 [main] INFO  sudoku.run.SudokuSolverTesting - Last iteration: 4534
+18:49:08.849 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:49:08.849 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:49:15.097 [main] INFO  sudoku.run.SudokuSolverTesting - Result conf positions:0
+18:49:15.097 [main] INFO  sudoku.run.SudokuSolverTesting - Board:
+[4, 6, 5, 3, 8, 2, 9, 7, 1]
+[9, 7, 2, 6, 4, 1, 8, 3, 5]
+[8, 3, 1, 9, 5, 7, 6, 4, 2]
+[5, 4, 8, 1, 9, 6, 7, 2, 3]
+[7, 9, 6, 2, 3, 5, 4, 1, 8]
+[1, 2, 3, 8, 7, 4, 5, 9, 6]
+[2, 5, 9, 4, 6, 3, 1, 8, 7]
+[6, 1, 4, 7, 2, 8, 3, 5, 9]
+[3, 8, 7, 5, 1, 9, 2, 6, 4]
+conflictedPositions: 0
+18:49:15.097 [main] INFO  sudoku.run.SudokuSolverTesting - Last iteration: 4534
+18:49:30.302 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:49:30.302 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:49:43.600 [main] INFO  sudoku.run.SudokuSolverTesting - Result conf positions:4
+18:49:43.600 [main] INFO  sudoku.run.SudokuSolverTesting - Board:
+[5, 4, 1, 3, 8, 2, 9, 6, 7]
+[9, 8, 7, 6, 4, 1, 2, 3, 5]
+[2, 3, 6, 9, 5, 7, 1, 4, 8]
+[6, 4, 8, 5, 1, 9, 7, 2, 3]
+[5, 7, 9, 2, 3, 4, 8, 1, 6]
+[1, 2, 3, 8, 7, 6, 5, 9, 4]
+[7, 5, 2, 4, 9, 3, 6, 8, 1]
+[6, 1, 4, 7, 2, 8, 3, 5, 9]
+[3, 9, 8, 1, 6, 5, 4, 7, 2]
+conflictedPositions: 4
+18:49:43.600 [main] INFO  sudoku.run.SudokuSolverTesting - Last iteration: 10000
+18:50:14.918 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:50:14.934 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:50:14.940 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2400
+18:50:14.940 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2400
+18:50:14.940 [2400] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2400
+18:50:14.940 [2400] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+18:50:33.578 [2400] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 5 mem size = 2400; tabu size = 155; board frequency = 5; aspiration criterion = 1
+18:51:15.683 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+18:51:15.683 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+18:51:15.699 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2400
+18:51:15.699 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2400
+18:51:15.699 [2400] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2400
+18:51:15.699 [2400] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+18:53:48.409 [2400] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 24 mem size = 2400; tabu size = 155; board frequency = 5; aspiration criterion = 1
+19:11:57.111 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+19:11:57.121 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+19:11:57.135 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 1650
+19:11:57.135 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 1650
+19:11:57.136 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 1750
+19:11:57.136 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 1750
+19:11:57.136 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 1900
+19:11:57.136 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 1900
+19:11:57.136 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2000
+19:11:57.136 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2000
+19:11:57.136 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2250
+19:11:57.136 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2250
+19:11:57.136 [1650] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 1650
+19:11:57.137 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2450
+19:11:57.138 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2450
+19:11:57.138 [1650] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+19:11:57.138 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2600
+19:11:57.137 [2000] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2000
+19:11:57.139 [2000] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+19:11:57.137 [1750] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 1750
+19:11:57.139 [1750] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+19:11:57.137 [1900] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 1900
+19:11:57.141 [1900] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+19:11:57.137 [2250] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2250
+19:11:57.141 [2250] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+19:11:57.138 [2450] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2450
+19:11:57.141 [2450] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+19:11:57.138 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2600
+19:11:57.142 [2600] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2600
+19:11:57.142 [2600] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+19:16:07.878 [1650] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 24 mem size = 1650; tabu size = 150; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:7, hard:8, hard:10]
+19:16:08.199 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 24 mem size = 1750; tabu size = 150; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:7, hard:8, hard:10]
+19:16:08.222 [2250] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 25 mem size = 2250; tabu size = 150; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:5, hard:7, hard:8, hard:10]
+19:16:08.948 [2000] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 25 mem size = 2000; tabu size = 150; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:3, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:7, hard:8, hard:10]
+19:16:13.535 [2450] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 24 mem size = 2450; tabu size = 150; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:7, hard:8, hard:10]
+19:16:13.962 [2600] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 24 mem size = 2600; tabu size = 150; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:7, hard:8, hard:10]
+19:16:19.726 [1900] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 24 mem size = 1900; tabu size = 150; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:7, hard:8, hard:10]
+19:20:47.847 [2000] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 23 mem size = 2000; tabu size = 150; board frequency = 3; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:9, middle:10, hard:2, hard:3, hard:4, hard:5, hard:8, hard:9, hard:10]
+19:20:48.183 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 22 mem size = 1750; tabu size = 150; board frequency = 3; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:7, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:9, middle:10, hard:2, hard:3, hard:4, hard:5, hard:8, hard:9, hard:10]
+19:20:51.503 [2250] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 22 mem size = 2250; tabu size = 150; board frequency = 3; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:9, middle:10, hard:3, hard:4, hard:5, hard:8, hard:9, hard:10]
+19:20:54.525 [1650] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 20 mem size = 1650; tabu size = 150; board frequency = 3; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:7, easy:10, middle:1, middle:2, middle:4, middle:6, middle:7, middle:9, middle:10, hard:3, hard:4, hard:5, hard:8, hard:9, hard:10]
+19:20:56.679 [1900] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 23 mem size = 1900; tabu size = 150; board frequency = 3; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:9, middle:10, hard:2, hard:3, hard:4, hard:5, hard:8, hard:9, hard:10]
+19:21:02.221 [2450] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 21 mem size = 2450; tabu size = 150; board frequency = 3; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:10, middle:1, middle:2, middle:4, middle:6, middle:7, middle:9, middle:10, hard:3, hard:4, hard:5, hard:8, hard:9, hard:10]
+19:21:04.180 [2600] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 21 mem size = 2600; tabu size = 150; board frequency = 3; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:10, middle:1, middle:2, middle:4, middle:6, middle:7, middle:9, middle:10, hard:3, hard:4, hard:5, hard:8, hard:9, hard:10]
+19:26:56.596 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 16 mem size = 1750; tabu size = 150; board frequency = 3; aspiration criterion = 3
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:9, easy:10, middle:1, middle:5, middle:6, middle:7, middle:9, middle:10, hard:3, hard:5, hard:10]
+19:27:15.564 [2000] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 16 mem size = 2000; tabu size = 150; board frequency = 3; aspiration criterion = 3
+Solved Sudoku[easy:1, easy:3, easy:4, easy:5, easy:6, easy:9, easy:10, middle:1, middle:5, middle:6, middle:7, middle:9, middle:10, hard:3, hard:5, hard:10]
+19:27:20.596 [1650] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 15 mem size = 1650; tabu size = 150; board frequency = 3; aspiration criterion = 3
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:9, easy:10, middle:1, middle:5, middle:6, middle:7, middle:9, middle:10, hard:3, hard:5]
+19:27:22.055 [1900] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 16 mem size = 1900; tabu size = 150; board frequency = 3; aspiration criterion = 3
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:9, easy:10, middle:1, middle:5, middle:6, middle:7, middle:9, middle:10, hard:3, hard:5, hard:10]
+19:27:22.551 [2250] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 16 mem size = 2250; tabu size = 150; board frequency = 3; aspiration criterion = 3
+Solved Sudoku[easy:1, easy:3, easy:4, easy:5, easy:6, easy:9, easy:10, middle:1, middle:5, middle:6, middle:7, middle:9, middle:10, hard:3, hard:5, hard:10]
+19:27:32.495 [2450] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 17 mem size = 2450; tabu size = 150; board frequency = 3; aspiration criterion = 3
+Solved Sudoku[easy:1, easy:3, easy:4, easy:5, easy:6, easy:9, easy:10, middle:1, middle:5, middle:6, middle:7, middle:9, middle:10, hard:3, hard:5, hard:8, hard:10]
+19:27:43.466 [2600] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 16 mem size = 2600; tabu size = 150; board frequency = 3; aspiration criterion = 3
+Solved Sudoku[easy:1, easy:3, easy:4, easy:5, easy:6, easy:9, easy:10, middle:1, middle:5, middle:6, middle:7, middle:9, middle:10, hard:3, hard:5, hard:10]
+19:33:36.963 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1796 RESULT = 14 mem size = 1750; tabu size = 150; board frequency = 3; aspiration criterion = 4
+Solved Sudoku[easy:1, easy:4, easy:5, easy:7, easy:10, middle:5, middle:6, middle:7, middle:9, middle:10, hard:3, hard:4, hard:5, hard:10]
+19:33:45.179 [1650] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1796 RESULT = 15 mem size = 1650; tabu size = 150; board frequency = 3; aspiration criterion = 4
+Solved Sudoku[easy:1, easy:4, easy:5, easy:6, easy:7, easy:10, middle:5, middle:6, middle:7, middle:9, middle:10, hard:3, hard:4, hard:9, hard:10]
+19:34:04.792 [2250] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1796 RESULT = 15 mem size = 2250; tabu size = 150; board frequency = 3; aspiration criterion = 4
+Solved Sudoku[easy:1, easy:5, easy:6, easy:7, easy:10, middle:2, middle:4, middle:5, middle:6, middle:7, middle:9, middle:10, hard:3, hard:4, hard:10]
+19:34:06.223 [2000] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1796 RESULT = 13 mem size = 2000; tabu size = 150; board frequency = 3; aspiration criterion = 4
+Solved Sudoku[easy:1, easy:5, easy:6, easy:7, easy:10, middle:5, middle:6, middle:7, middle:9, middle:10, hard:3, hard:4, hard:10]
+19:34:06.233 [1900] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1796 RESULT = 13 mem size = 1900; tabu size = 150; board frequency = 3; aspiration criterion = 4
+Solved Sudoku[easy:1, easy:5, easy:7, easy:10, middle:1, middle:5, middle:6, middle:7, middle:9, middle:10, hard:3, hard:4, hard:10]
+19:34:26.858 [2450] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1796 RESULT = 14 mem size = 2450; tabu size = 150; board frequency = 3; aspiration criterion = 4
+Solved Sudoku[easy:1, easy:5, easy:6, easy:7, easy:10, middle:4, middle:5, middle:6, middle:7, middle:9, middle:10, hard:3, hard:4, hard:10]
+19:34:31.426 [2600] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1796 RESULT = 16 mem size = 2600; tabu size = 150; board frequency = 3; aspiration criterion = 4
+Solved Sudoku[easy:1, easy:4, easy:5, easy:6, easy:7, easy:10, middle:4, middle:5, middle:6, middle:7, middle:9, middle:10, hard:1, hard:3, hard:4, hard:10]
+19:38:43.951 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1795 RESULT = 20 mem size = 1750; tabu size = 150; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:4, hard:10]
+19:38:45.504 [1650] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1795 RESULT = 20 mem size = 1650; tabu size = 150; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:10]
+19:39:11.895 [2000] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1795 RESULT = 21 mem size = 2000; tabu size = 150; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:4, hard:10]
+19:39:12.127 [1900] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1795 RESULT = 21 mem size = 1900; tabu size = 150; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:4, hard:10]
+19:39:15.353 [2250] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1795 RESULT = 21 mem size = 2250; tabu size = 150; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:4, hard:10]
+19:39:44.731 [2450] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1795 RESULT = 20 mem size = 2450; tabu size = 150; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:10]
+19:39:51.539 [2600] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1795 RESULT = 20 mem size = 2600; tabu size = 150; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:10]
+19:43:32.267 [1650] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1794 RESULT = 20 mem size = 1650; tabu size = 150; board frequency = 4; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:10, hard:3, hard:4, hard:8, hard:9, hard:10]
+19:43:39.516 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1794 RESULT = 19 mem size = 1750; tabu size = 150; board frequency = 4; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:6, middle:7, middle:10, hard:3, hard:4, hard:8, hard:9, hard:10]
+19:44:16.425 [1900] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1794 RESULT = 18 mem size = 1900; tabu size = 150; board frequency = 4; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:6, middle:7, middle:10, hard:3, hard:4, hard:8, hard:10]
+19:44:19.832 [2000] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1794 RESULT = 18 mem size = 2000; tabu size = 150; board frequency = 4; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:7, easy:9, easy:10, middle:1, middle:4, middle:6, middle:7, middle:9, middle:10, hard:3, hard:4, hard:8, hard:10]
+19:44:21.579 [2250] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1794 RESULT = 19 mem size = 2250; tabu size = 150; board frequency = 4; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:6, middle:7, middle:9, middle:10, hard:3, hard:4, hard:8, hard:10]
+19:44:49.211 [2450] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1794 RESULT = 20 mem size = 2450; tabu size = 150; board frequency = 4; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:6, middle:7, middle:9, middle:10, hard:3, hard:4, hard:6, hard:8, hard:10]
+19:45:03.360 [2600] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1794 RESULT = 19 mem size = 2600; tabu size = 150; board frequency = 4; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:6, middle:7, middle:9, middle:10, hard:3, hard:4, hard:8, hard:10]
+19:50:31.773 [1650] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1793 RESULT = 11 mem size = 1650; tabu size = 150; board frequency = 4; aspiration criterion = 3
+Solved Sudoku[easy:1, easy:2, easy:5, easy:10, middle:1, middle:6, middle:7, middle:9, middle:10, hard:3, hard:6]
+19:50:38.114 [1750] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1793 RESULT = 11 mem size = 1750; tabu size = 150; board frequency = 4; aspiration criterion = 3
+Solved Sudoku[easy:2, easy:4, easy:5, easy:10, middle:1, middle:6, middle:7, middle:9, middle:10, hard:3, hard:6]
+19:51:19.625 [2250] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1793 RESULT = 12 mem size = 2250; tabu size = 150; board frequency = 4; aspiration criterion = 3
+Solved Sudoku[easy:1, easy:4, easy:5, easy:9, easy:10, middle:1, middle:6, middle:7, middle:9, middle:10, hard:3, hard:6]
+19:51:19.937 [1900] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1793 RESULT = 12 mem size = 1900; tabu size = 150; board frequency = 4; aspiration criterion = 3
+Solved Sudoku[easy:1, easy:2, easy:4, easy:5, easy:10, middle:1, middle:6, middle:7, middle:9, middle:10, hard:3, hard:6]
+19:51:34.367 [2000] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1793 RESULT = 11 mem size = 2000; tabu size = 150; board frequency = 4; aspiration criterion = 3
+Solved Sudoku[easy:1, easy:4, easy:5, easy:10, middle:1, middle:6, middle:7, middle:9, middle:10, hard:3, hard:6]
+19:51:50.096 [2450] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1793 RESULT = 11 mem size = 2450; tabu size = 150; board frequency = 4; aspiration criterion = 3
+Solved Sudoku[easy:1, easy:4, easy:5, easy:10, middle:1, middle:6, middle:7, middle:9, middle:10, hard:3, hard:6]
+19:52:06.463 [2600] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1793 RESULT = 11 mem size = 2600; tabu size = 150; board frequency = 4; aspiration criterion = 3
+Solved Sudoku[easy:1, easy:4, easy:5, easy:10, middle:1, middle:6, middle:7, middle:9, middle:10, hard:3, hard:6]
+19:55:45.592 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+19:55:45.592 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+19:55:45.608 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 1900
+19:55:45.608 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 1900
+19:55:45.608 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2000
+19:55:45.608 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2000
+19:55:45.608 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2100
+19:55:45.608 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2100
+19:55:45.608 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2250
+19:55:45.608 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2250
+19:55:45.608 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2450
+19:55:45.608 [2100] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2100
+19:55:45.608 [2250] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2250
+19:55:45.608 [2100] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+19:55:45.608 [1900] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 1900
+19:55:45.608 [1900] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+19:55:45.608 [2000] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2000
+19:55:45.608 [2000] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+19:55:45.608 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2450
+19:55:45.608 [2250] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+19:55:45.608 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2550
+19:55:45.608 [2450] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2450
+19:55:45.608 [2450] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+19:55:45.608 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2550
+19:55:45.608 [2550] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2550
+19:55:45.608 [2550] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+19:59:29.983 [2000] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 25 mem size = 2000; tabu size = 190; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:5, hard:6, hard:7, hard:8, hard:10]
+19:59:30.268 [1900] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 25 mem size = 1900; tabu size = 190; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:5, hard:6, hard:7, hard:8, hard:10]
+19:59:32.121 [2100] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 25 mem size = 2100; tabu size = 190; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:5, hard:6, hard:7, hard:8, hard:10]
+19:59:32.835 [2550] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 26 mem size = 2550; tabu size = 190; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:5, hard:6, hard:7, hard:8, hard:10]
+19:59:36.948 [2250] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 25 mem size = 2250; tabu size = 190; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:5, hard:6, hard:7, hard:8, hard:10]
+19:59:37.744 [2450] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 25 mem size = 2450; tabu size = 190; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:5, hard:6, hard:7, hard:8, hard:10]
+20:03:03.174 [2550] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 24 mem size = 2550; tabu size = 190; board frequency = 3; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:3, hard:4, hard:5, hard:6, hard:8, hard:10]
+20:03:06.805 [2450] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 24 mem size = 2450; tabu size = 190; board frequency = 3; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:3, hard:4, hard:5, hard:6, hard:8, hard:10]
+20:03:14.827 [2250] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 24 mem size = 2250; tabu size = 190; board frequency = 3; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:7, easy:9, easy:10, middle:1, middle:2, middle:3, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:3, hard:4, hard:5, hard:8, hard:10]
+20:03:18.134 [2000] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 22 mem size = 2000; tabu size = 190; board frequency = 3; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:7, easy:10, middle:1, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:3, hard:4, hard:5, hard:6, hard:8, hard:10]
+20:03:25.880 [2100] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 24 mem size = 2100; tabu size = 190; board frequency = 3; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:7, easy:9, easy:10, middle:1, middle:2, middle:3, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:3, hard:4, hard:5, hard:8, hard:10]
+20:03:35.007 [1900] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 21 mem size = 1900; tabu size = 190; board frequency = 3; aspiration criterion = 2
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:7, easy:10, middle:1, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:3, hard:4, hard:5, hard:8, hard:10]
+20:07:27.960 [2550] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 23 mem size = 2550; tabu size = 190; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:4, hard:10]
+20:07:31.802 [2450] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 23 mem size = 2450; tabu size = 190; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:4, hard:10]
+20:07:35.866 [2250] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 23 mem size = 2250; tabu size = 190; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:4, hard:10]
+20:07:37.940 [2000] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 23 mem size = 2000; tabu size = 190; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:4, hard:10]
+20:07:45.281 [2100] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 23 mem size = 2100; tabu size = 190; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:4, hard:10]
+20:07:51.559 [1900] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 23 mem size = 1900; tabu size = 190; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:4, hard:10]
+20:12:42.191 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+20:12:42.191 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+20:12:42.207 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2100
+20:12:42.207 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2100
+20:12:42.207 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2250
+20:12:42.207 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2250
+20:12:42.207 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2450
+20:12:42.207 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2450
+20:12:42.207 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2520
+20:12:42.207 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2520
+20:12:42.207 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2550
+20:12:42.207 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2550
+20:12:42.207 [2100] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2100
+20:12:42.207 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2570
+20:12:42.207 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2570
+20:12:42.207 [2100] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+20:12:42.207 [2550] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2550
+20:12:42.207 [2550] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+20:12:42.207 [2250] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2250
+20:12:42.222 [2250] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+20:12:42.207 [2450] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2450
+20:12:42.222 [2450] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+20:12:42.207 [2520] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2520
+20:12:42.207 [2570] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2570
+20:12:42.207 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2600
+20:12:42.222 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2600
+20:12:42.222 [2570] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+20:12:42.222 [2520] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+20:12:42.222 [2600] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2600
+20:12:42.222 [2600] INFO  sudoku.run.SudokuSolverThread - Max iteration = 1800
+20:16:55.400 [2600] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 26 mem size = 2600; tabu size = 180; board frequency = 2; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:8, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:4, hard:5, hard:6, hard:8, hard:10]
+20:17:01.783 [2100] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 24 mem size = 2100; tabu size = 180; board frequency = 2; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:5, hard:6, hard:8, hard:10]
+20:17:03.578 [2250] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 24 mem size = 2250; tabu size = 180; board frequency = 2; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:5, hard:6, hard:8, hard:10]
+20:17:03.870 [2550] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 25 mem size = 2550; tabu size = 180; board frequency = 2; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:4, hard:5, hard:6, hard:8, hard:10]
+20:17:04.779 [2450] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 24 mem size = 2450; tabu size = 180; board frequency = 2; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:5, hard:6, hard:8, hard:10]
+20:17:05.021 [2570] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 24 mem size = 2570; tabu size = 180; board frequency = 2; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:5, hard:6, hard:8, hard:10]
+20:17:06.099 [2520] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 24 mem size = 2520; tabu size = 180; board frequency = 2; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:5, hard:6, hard:8, hard:10]
+20:21:50.047 [2600] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 26 mem size = 2600; tabu size = 180; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:5, hard:7, hard:8, hard:9, hard:10]
+20:21:57.347 [2100] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 24 mem size = 2100; tabu size = 180; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:5, hard:7, hard:8, hard:10]
+20:21:57.942 [2550] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 26 mem size = 2550; tabu size = 180; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:5, hard:7, hard:8, hard:9, hard:10]
+20:22:01.367 [2520] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 26 mem size = 2520; tabu size = 180; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:5, hard:7, hard:8, hard:9, hard:10]
+20:22:01.652 [2570] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 26 mem size = 2570; tabu size = 180; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:5, hard:7, hard:8, hard:9, hard:10]
+20:22:09.022 [2250] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 24 mem size = 2250; tabu size = 180; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:5, hard:7, hard:8, hard:10]
+20:22:11.671 [2450] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1798 RESULT = 24 mem size = 2450; tabu size = 180; board frequency = 3; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:4, hard:5, hard:7, hard:8, hard:10]
+20:27:32.805 [2600] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 22 mem size = 2600; tabu size = 180; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:10]
+20:27:33.329 [2100] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 22 mem size = 2100; tabu size = 180; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:10]
+20:27:40.409 [2550] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 22 mem size = 2550; tabu size = 180; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:10]
+20:27:42.255 [2520] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 22 mem size = 2520; tabu size = 180; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:10]
+20:27:42.880 [2570] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 22 mem size = 2570; tabu size = 180; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:10]
+20:27:47.942 [2250] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 22 mem size = 2250; tabu size = 180; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:10]
+20:27:51.974 [2450] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1797 RESULT = 22 mem size = 2450; tabu size = 180; board frequency = 4; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:2, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:10]
+20:29:03.008 [main] INFO  sudoku.run.SudokuSolverTesting - SudokuSolverTesting
+20:29:03.023 [main] INFO  sudoku.run.SudokuSolverTesting - /////////////////////////////////////////////////////////////////////////////
+20:29:03.023 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2100
+20:29:03.023 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2100
+20:29:03.023 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2250
+20:29:03.023 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2250
+20:29:03.023 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2450
+20:29:03.023 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2450
+20:29:03.023 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2550
+20:29:03.023 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2550
+20:29:03.023 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2600
+20:29:03.023 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2600
+20:29:03.023 [main] INFO  sudoku.run.SudokuSolverThread - Creating thread with mem size: 2650
+20:29:03.023 [main] INFO  sudoku.run.SudokuSolverThread - Starting thread with mem size: 2650
+20:29:03.039 [2100] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2100
+20:29:03.039 [2600] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2600
+20:29:03.039 [2650] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2650
+20:29:03.039 [2550] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2550
+20:29:03.039 [2250] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2250
+20:29:03.039 [2450] INFO  sudoku.run.SudokuSolverThread - Running thread with mem size: 2450
+20:33:38.916 [2650] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 26 mem size = 2650; tabu size = 170; board frequency = 2; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:8, easy:9, easy:10, middle:1, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:5, hard:6, hard:8, hard:9, hard:10]
+20:33:43.129 [2100] WARN  sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 24 mem size = 2100; tabu size = 170; board frequency = 2; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:3, hard:4, hard:5, hard:6, hard:8, hard:10]
+20:33:43.363 [2600] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 27 mem size = 2600; tabu size = 170; board frequency = 2; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:8, easy:9, easy:10, middle:1, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:4, hard:5, hard:6, hard:8, hard:9, hard:10]
+20:33:50.435 [2250] WARN  sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 23 mem size = 2250; tabu size = 170; board frequency = 2; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:3, hard:5, hard:6, hard:8, hard:10]
+20:33:53.081 [2550] ERROR sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 26 mem size = 2550; tabu size = 170; board frequency = 2; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:5, easy:6, easy:7, easy:9, easy:10, middle:1, middle:4, middle:5, middle:6, middle:7, middle:8, middle:9, middle:10, hard:1, hard:2, hard:3, hard:4, hard:5, hard:6, hard:8, hard:9, hard:10]
+20:33:58.096 [2450] WARN  sudoku.run.SudokuSolverThread - Iteration todo = 1799 RESULT = 23 mem size = 2450; tabu size = 170; board frequency = 2; aspiration criterion = 1
+Solved Sudoku[easy:1, easy:2, easy:3, easy:4, easy:6, easy:7, easy:9, easy:10, middle:1, middle:4, middle:5, middle:6, middle:7, middle:9, middle:10, hard:1, hard:3, hard:4, hard:5, hard:6, hard:8, hard:9, hard:10]

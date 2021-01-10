@@ -18,6 +18,7 @@ public class SudokuSolver {
 
     private Board board;
     private Board bestResult;
+    private int lastIteration = 0;
 
     public SudokuSolver(Board board, int maxIterations, int tabuSize, int memSize, int maxBoardFrequency, int aspirationCriterioNum){
         this.board = board;
@@ -81,6 +82,7 @@ public class SudokuSolver {
             memoryList.addBoard(this.board);
             iterator++;
         }  // end while loop
+        this.lastIteration = iterator;
         this.bestResult = this.board;
 //        logger.info("Ending iteration: " + iterator);
         return this.bestResult;
@@ -92,5 +94,9 @@ public class SudokuSolver {
 
     private boolean isAspirationCriterionFulfilled(int tabuConflictedPositions, int neighbourConflictedPositions) {
         return tabuConflictedPositions <= neighbourConflictedPositions - aspirationCriterioNum;
+    }
+
+    public int getLastIteration() {
+        return lastIteration;
     }
 }

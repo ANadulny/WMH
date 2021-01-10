@@ -6,14 +6,24 @@ import org.slf4j.LoggerFactory;
 import sudoku.reader.SudokuReader;
 import sudoku.solver.SudokuSolver;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 class SudokuSolverThread extends Thread {
     private Thread t;
-    private int memSize;
-    private SudokuReader sudokuReader;
+    private final int memSize;
+    private final SudokuReader sudokuReader;
     private static final Logger logger = LoggerFactory.getLogger(SudokuSolverThread.class);
+    private static final int maxIterations = 9000;
+
+    private static final int minTabuSize = 140;
+    private static final int minBoardFrequency = 2;
+    private static final int minAspirationCriterion = 1;
+
+    private static final int maxTabuSize = 250;
+    private static final int maxBoardFrequency = 8;
+    private static final int maxAspirationCriterion = 4;
 
     SudokuSolverThread( int memSize) {
         this.memSize = memSize;
@@ -23,53 +33,52 @@ class SudokuSolverThread extends Thread {
 
     public void run() {
         logger.info("Running thread with mem size: " +  memSize);
-        int maxIterations = 4000;
-        int maxTabuSize = 200;
-        int maxBoardFrequency = 30;
-        int maxAspirationCriterion = 5;
         List<String> levels = Arrays.asList("easy", "middle", "hard");
-        int maxIteration = ((maxTabuSize - 20) / 15) * 30 * 5;
-        logger.info("Max iteration = " + maxIteration);
         int iterator = 1;
-        for (int j = 20; j <= maxTabuSize; j = j + 15) {
-            for (int k = 5; k <= maxBoardFrequency; k = k + 5) {
-                for (int l = 1; l <= maxAspirationCriterion; l++) {
-                    int sudokuSolved = 0;
-//                        for (String level: levels) {
-                    for (int m = 1; m <= 5; m++) {
-                        Board testBoard = sudokuReader.readSudokuFromFile("middle", "tests", m + ".txt");
-                        SudokuSolver solver = new SudokuSolver(testBoard, maxIterations, j, memSize, k, l);
-                        solver.solveSudoku(false);
-//                                logger.info("Best result");
-                        if (solver.getBestResult().getConflictedPositions() == 0) {
-                            sudokuSolved++;
-//                                    logger.info(solver.getBestResult().toString());
-                        } else {
-//                                    logger.warn("Sudoku was not solved! Conflicts positions: " + solver.getBestResult().getConflictedPositions());
-                            continue;
-                        }
-//                                Board solutionBoard = sudokuReader.readSudokuFromFile(level, "solutions", m + ".txt");
-//                                for (int n = 0; n < 9; n++) {
-//                                    if (!Helper.hasCorrectNumberPosition(testBoard.getRow(n), solutionBoard.getRow(n)) ||
-//                                            !Helper.hasCorrectNumberPosition(testBoard.getColumn(n), solutionBoard.getColumn(n))) {
-//                                        tabuSolved--;
-////                                        logger.warn("Sudoku was solved but has different positions in solution!");
-//                                    }
-//                                }
-                    }
-//                        }
-                    if (sudokuSolved <= 3) {
-                        logger.info("Iteration todo = " + (maxIteration - iterator) + " RESULT = " + String.valueOf(sudokuSolved) + " mem size = " + memSize + "; tabu size = " + j + "; board frequency = " + k + "; aspiration criterion = " + l);
-                    } else if (sudokuSolved <= 4) {
-                        logger.warn("Iteration todo = " + (maxIteration - iterator) + " RESULT = " + String.valueOf(sudokuSolved) + " mem size = " + memSize + "; tabu size = " + j + "; board frequency = " + k + "; aspiration criterion = " + l);
-                    } else {
-                        logger.error("Iteration todo = " + (maxIteration - iterator) + " RESULT = " + String.valueOf(sudokuSolved) + " mem size = " + memSize + "; tabu size = " + j + "; board frequency = " + k + "; aspiration criterion = " + l);
+        for (int tabuSize = minTabuSize; tabuSize <= maxTabuSize; tabuSize += 10) {
+            for (int boardFrequency = minBoardFrequency; boardFrequency <= maxBoardFrequency; boardFrequency++) {
+                for (int aspirationCriterion = minAspirationCriterion; aspirationCriterion <= maxAspirationCriterion; aspirationCriterion++) {
+                    for (String level: levels) {
+                        solveAllSudokuWithGivenLevel(iterator, level, tabuSize, boardFrequency, aspirationCriterion);
                     }
                     iterator++;
                 }
             }
         }
         logger.info("Thread with mem size: " +  memSize + " exiting.");
+    }
+
+    private void solveAllSudokuWithGivenLevel(int iterator, String level, int tabuSize, int boardFrequency, int aspirationCriterion) {
+        int sudokuSolved = 0;
+        List<Integer> solvedSudokuNumbers = new ArrayList<>();
+        List<Integer> doesNotsolvedSudokuNumbers = new ArrayList<>();
+
+        for (int m = 1; m <= 15; m++) {
+            Board testBoard = sudokuReader.readSudokuFromFile(level, "tests", m + ".txt");
+            SudokuSolver solver = new SudokuSolver(testBoard, maxIterations, tabuSize, memSize, boardFrequency, aspirationCriterion);
+            solver.solveSudoku(false);
+            if (solver.getBestResult().getConflictedPositions() == 0) {
+                sudokuSolved++;
+                solvedSudokuNumbers.add(m);
+            } else {
+                doesNotsolvedSudokuNumbers.add(m);
+            }
+
+            if (m > 8 && sudokuSolved < 3) {
+                return;
+            }
+        }
+        String logMessage = "Iteration = " + iterator + " LEVEL " + level + " RESULT = " + sudokuSolved + " mem size = " + memSize + "; tabu size = " + tabuSize +
+                "; board frequency = " + boardFrequency + "; aspiration criterion = " + aspirationCriterion + "\nSolved Sudoku " + solvedSudokuNumbers.toString() +
+                "\nSudoku does not solved " + doesNotsolvedSudokuNumbers.toString();
+
+        if (sudokuSolved >= 12) {
+            logger.error(logMessage);
+        } else if (sudokuSolved >= 8) {
+            logger.warn(logMessage);
+        } else {
+            logger.info(logMessage);
+        }
     }
 
     public void start () {
