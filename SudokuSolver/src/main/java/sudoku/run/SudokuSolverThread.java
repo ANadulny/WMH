@@ -17,13 +17,13 @@ class SudokuSolverThread extends Thread {
     private static final Logger logger = LoggerFactory.getLogger(SudokuSolverThread.class);
     private static final int maxIterations = 9000;
 
-    private static final int minTabuSize = 140;
-    private static final int minBoardFrequency = 2;
+    private static final int minTabuSize = 81;
+    private static final int minBoardFrequency = 3;
     private static final int minAspirationCriterion = 1;
 
     private static final int maxTabuSize = 250;
-    private static final int maxBoardFrequency = 8;
-    private static final int maxAspirationCriterion = 4;
+    private static final int maxBoardFrequency = 6;
+    private static final int maxAspirationCriterion = 3;
 
     SudokuSolverThread( int memSize) {
         this.memSize = memSize;
@@ -51,7 +51,8 @@ class SudokuSolverThread extends Thread {
     private void solveAllSudokuWithGivenLevel(int iterator, String level, int tabuSize, int boardFrequency, int aspirationCriterion) {
         int sudokuSolved = 0;
         List<Integer> solvedSudokuNumbers = new ArrayList<>();
-        List<Integer> doesNotsolvedSudokuNumbers = new ArrayList<>();
+        List<Integer> doesNotSolvedSudokuNumbers = new ArrayList<>();
+        int allIterations = 0;
 
         for (int m = 1; m <= 15; m++) {
             Board testBoard = sudokuReader.readSudokuFromFile(level, "tests", m + ".txt");
@@ -61,16 +62,19 @@ class SudokuSolverThread extends Thread {
                 sudokuSolved++;
                 solvedSudokuNumbers.add(m);
             } else {
-                doesNotsolvedSudokuNumbers.add(m);
+                doesNotSolvedSudokuNumbers.add(m);
             }
 
             if (m > 8 && sudokuSolved < 3) {
                 return;
             }
+            allIterations += solver.getLastIteration();
         }
+
         String logMessage = "Iteration = " + iterator + " LEVEL " + level + " RESULT = " + sudokuSolved + " mem size = " + memSize + "; tabu size = " + tabuSize +
                 "; board frequency = " + boardFrequency + "; aspiration criterion = " + aspirationCriterion + "\nSolved Sudoku " + solvedSudokuNumbers.toString() +
-                "\nSudoku does not solved " + doesNotsolvedSudokuNumbers.toString();
+                "\nSudoku does not solved " + doesNotSolvedSudokuNumbers.toString() +
+                "\nAverage iterations: " + (allIterations/15);
 
         if (sudokuSolved >= 12) {
             logger.error(logMessage);
