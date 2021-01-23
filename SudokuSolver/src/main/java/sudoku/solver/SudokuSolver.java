@@ -71,10 +71,6 @@ public class SudokuSolver {
                 i++;
             } // end while loop
 
-            if (iterator == 829) {
-                System.out.println("TEST");
-            }
-
             if (bestIterationState == null) {
                 logger.error("bestIterationState can not be null!");
                 return this.bestResult;
